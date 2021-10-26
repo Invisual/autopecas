@@ -15,15 +15,15 @@ const SEO = ({ title, description, image, pathname, article, lang }) => {
             titleTemplate,
             defaultDescription,
             siteUrl,
-            defaultImage
-          }
-        }
+            defaultImage,
+          },
+        },
       }) => {
         const seo = {
           title: title || defaultTitle,
           description: description || defaultDescription,
           image: article ? image : `${image || defaultImage}`,
-          url: `${siteUrl}${pathname || '/'}`
+          url: `${siteUrl}${pathname || '/'}`,
         }
 
         return (
@@ -81,14 +81,14 @@ SEO.propTypes = {
   image: PropTypes.string,
   pathname: PropTypes.string,
   article: PropTypes.bool,
-  lang: PropTypes.string
+  lang: PropTypes.string,
 }
 
 SEO.defaultProps = {
-  title: 'Default page name here',
-  description: 'Default page description here',
+  title: 'Home',
+  description: 'Autopeças.pt - Peças para automóveis',
   image: null,
   pathname: null,
   article: false,
-  lang: 'en'
+  lang: 'en',
 }

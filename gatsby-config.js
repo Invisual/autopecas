@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: 'Website name',
-    titleTemplate: '%s · Website name',
-    description: 'Website site description',
-    url: 'https://www.website-url.com',
-    siteUrl: 'https://www.website-url.com',
-    image: 'https://path-to-logo.com',
-    defaultImage: 'https://path-to-logo.com',
+    title: 'Autopeças.pt',
+    titleTemplate: '%s · Autopeças.pt',
+    description: 'AUTOPEÇAS.PT - Peças para automóveis',
+    url: 'https://autopecas.pt',
+    siteUrl: 'https://autopecas.pt',
+    image: 'https://autopecas.pt/logo.png',
+    defaultImage: 'https://autopecas.pt/logo.png',
   },
   plugins: [
     'gatsby-plugin-styled-components',
@@ -36,6 +36,22 @@ module.exports = {
           head: true,
           respectDNT: true,
           exclude: ['/404/**'],
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /images/,
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: [`PT Sans:400,700`],
         },
       },
     },
