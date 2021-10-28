@@ -98,6 +98,7 @@ const Blog = styled.section`
   }
 
   p {
+    max-width: 65rem;
     color: ${({ theme }) => theme.darkText};
     font-size: 1.8rem;
     line-height: 2.5rem;

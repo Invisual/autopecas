@@ -10,27 +10,19 @@ import { ContactForm } from '../components/ContactForm'
 import MainVideo from '../assets/videos/geral.mp4'
 import MainVideoPreview from '../assets/videos/geral-preview.mp4'
 import { Styled } from '../styles/index.styles'
+import { parseBlogPosts } from '../utils/helpers'
+import { graphql } from 'gatsby'
 
-const IndexPage = () => {
-  const logos = [
-    './images/logos/1.svg',
-    './images/logos/2.svg',
-    './images/logos/3.svg',
-    './images/logos/4.svg',
-    './images/logos/5.svg',
-    './images/logos/6.svg',
-    './images/logos/7.svg',
-    './images/logos/8.svg',
-    './images/logos/9.svg',
-    './images/logos/10.svg',
-    './images/logos/11.svg',
-    './images/logos/12.svg',
-    './images/logos/13.svg',
-    './images/logos/14.svg',
-    './images/logos/15.svg',
-    './images/logos/16.svg',
-    './images/logos/17.svg',
-  ]
+const IndexPage = ({
+  data: {
+    allMarkdownRemark: { edges },
+  },
+}) => {
+  const post = parseBlogPosts(edges)[0]
+
+  const clientLogos = [...Array(17).keys()].map(
+    (i) => `./images/logos/${i + 1}.svg`
+  )
 
   return (
     <Layout>
@@ -72,26 +64,25 @@ const IndexPage = () => {
 
         <Styled.Clients>
           <Title text="Marcas Premium" light />
-          <ImageCarousel images={logos} alt="Client logo" />
+          <ImageCarousel images={clientLogos} alt="Client logo" />
         </Styled.Clients>
 
-        <Styled.Blog>
-          <Title text="Blogue" />
-          <div className="wrapper">
-            <h4 className="mbl">AUTOPEÇAS.PT - Uma Nova Identidade</h4>
-            <img src="./images/blog.png" alt="Nova identidade" />
-            <div className="text">
-              <div>
-                <h4 className="desktop">AUTOPEÇAS.PT - Uma Nova Identidade</h4>
-                <p>
-                  A APG - Auto Peças Gafanha da Nazaré denomina-se agora de
-                  Autopeças.pt
-                </p>
+        {post && (
+          <Styled.Blog>
+            <Title text="Blogue" />
+            <div className="wrapper">
+              <h4 className="mbl">{post.title}</h4>
+              <img src={post.img} alt={post.title} />
+              <div className="text">
+                <div>
+                  <h4 className="desktop">{post.title}</h4>
+                  <p>{post.description}</p>
+                </div>
+                <CtaLink text="saber mais" url={post.path} className="cta" />
               </div>
-              <CtaLink text="saber mais" url="/blog" className="cta" />
             </div>
-          </div>
-        </Styled.Blog>
+          </Styled.Blog>
+        )}
 
         <Styled.Contact>
           <ContactForm withToggle />
@@ -102,3 +93,27 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export const pageQuery = graphql`
+  query {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      limit: 1
+    ) {
+      edges {
+        node {
+          id
+          excerpt(pruneLength: 250)
+          frontmatter {
+            date(formatString: "DD MMMM, YYYY")
+            path
+            title
+            img
+            status
+            description
+          }
+        }
+      }
+    }
+  }
+`

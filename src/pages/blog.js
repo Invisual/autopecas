@@ -8,7 +8,7 @@ import { parseBlogPosts } from '../utils/helpers'
 import { Styled } from '../styles/blog.styles'
 import { graphql } from 'gatsby'
 
-const Blog = ({
+const BlogPage = ({
   data: {
     allMarkdownRemark: { edges },
   },
@@ -63,7 +63,7 @@ const Blog = ({
   )
 }
 
-export default Blog
+export default BlogPage
 
 export const pageQuery = graphql`
   query {
