@@ -3,10 +3,18 @@ import ChevronIcon from '../assets/images/chevron.svg'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-export const CtaLink = ({ text, url, light, className }) => (
+export const CtaLink = ({ text, url, light, reverted, className }) => (
   <Link to={url} className={`cta-link ${className || ''}`}>
-    <StyledLink light={light}>
-      {text} <ChevronIcon />
+    <StyledLink light={light} reverted={reverted}>
+      {reverted ? (
+        <>
+          <ChevronIcon /> {text}
+        </>
+      ) : (
+        <>
+          {text} <ChevronIcon />
+        </>
+      )}
     </StyledLink>
   </Link>
 )
@@ -29,6 +37,7 @@ const StyledLink = styled.span`
 
   svg {
     width: 0.7rem;
+    transform: ${(props) => (props.reverted ? 'rotate(180deg)' : 'none')};
     stroke: ${(props) =>
       props.light ? props.theme.lightText : props.theme.darkTitle};
   }

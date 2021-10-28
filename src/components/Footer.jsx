@@ -1,22 +1,30 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Logo from '../assets/images/logo.svg'
 import FacebookIcon from '../assets/images/facebook.svg'
 import InstagramIcon from '../assets/images/instagram.svg'
 import LinkedinIcon from '../assets/images/linkedin.svg'
-import YoutubeIcon from '../assets/images/youtube.svg'
 import ChevronIcon from '../assets/images/chevron.svg'
 import styled from 'styled-components'
+import addToMailchimp from 'gatsby-plugin-mailchimp'
 import { Link } from 'gatsby'
 
 export const Footer = () => {
   const [email, setEmail] = useState('')
+  const [success, setSuccess] = useState(null)
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Lógica para newsletter aqui
-    console.log(email)
-    setEmail('')
+    addToMailchimp(email).then(({ result }) => {
+      setSuccess(result === 'success')
+      setEmail('')
+    })
   }
+
+  useEffect(() => {
+    let timer
+    success && (timer = setTimeout(() => setSuccess(), 5000))
+    return () => clearTimeout(timer)
+  }, [success])
 
   return (
     <StyledFooter>
@@ -47,33 +55,36 @@ export const Footer = () => {
 
         <div className="footer__item">
           <div className="social-icons">
-            <Link to="/">
+            <a href="https://www.facebook.com/AutoPecasGafanha" target="_blank">
               <FacebookIcon />
-            </Link>
+            </a>
             <Link to="/">
               <InstagramIcon />
             </Link>
             <Link to="/">
               <LinkedinIcon />
             </Link>
-            <Link to="/">
-              <YoutubeIcon />
-            </Link>
           </div>
 
           <div className="newsletter">
             <p>Subscreva a nossa newsletter</p>
-            <form onSubmit={handleSubmit}>
-              <input
-                type="email"
-                placeholder="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <button>
-                <ChevronIcon />
-              </button>
-            </form>
+            {success === true ? (
+              <p>Obrigado por subscrever!</p>
+            ) : success === false ? (
+              <p>Ocorreu um erro, tente de novo.</p>
+            ) : (
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="email"
+                  placeholder="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <button>
+                  <ChevronIcon />
+                </button>
+              </form>
+            )}
           </div>
         </div>
 
@@ -120,7 +131,6 @@ const StyledFooter = styled.footer`
     }
 
     &:last-child svg {
-      width: 1.6rem;
       margin-right: 0;
     }
   }

@@ -26,3 +26,16 @@ export const formatVideoCurrentTime = (currentTime) => {
       : seconds)
   )
 }
+
+export const parseBlogPosts = (edges) =>
+  edges
+    .filter((edge) => edge.node.frontmatter.status)
+    .map(({ node }) => ({
+      id: node.id,
+      path: node.frontmatter.path,
+      date: node.frontmatter.date,
+      title: node.frontmatter.title,
+      img: node.frontmatter.img,
+      description: node.frontmatter.description,
+      path: node.frontmatter.path,
+    }))

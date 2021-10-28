@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-export const ImageCarousel = ({ images }) => {
+export const ImageCarousel = ({ images, alt }) => {
   //if (!images || !(images.length > 0)) return null
 
   const settings = {
@@ -44,8 +44,8 @@ export const ImageCarousel = ({ images }) => {
       <StyledCarousel className="carousel desktop">
         <Slider {...settings}>
           {images.map((src) => (
-            <div>
-              <img src={src} />
+            <div key={src}>
+              <img src={src} alt={alt} />
             </div>
           ))}
         </Slider>
@@ -54,8 +54,8 @@ export const ImageCarousel = ({ images }) => {
       <StyledCarousel className="carousel mbl">
         <div className="images">
           {images.map((src) => (
-            <div className="single-image">
-              <img src={src} />
+            <div className="single-image" key={src}>
+              <img src={src} alt={alt} />
             </div>
           ))}
         </div>
@@ -80,7 +80,8 @@ const StyledCarousel = styled.div`
   }
 
   img {
-    max-width: 100%;
+    width: 22rem;
+    max-width: 85%;
     margin: 0 auto;
   }
 

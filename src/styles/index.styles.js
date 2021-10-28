@@ -3,6 +3,14 @@ import styled from 'styled-components'
 const Main = styled.main`
   max-width: 100vw;
   overflow-x: hidden;
+
+  .section-image {
+    background-image: url('./images/blog.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%inherit;
+    height: 100vh;
+  }
 `
 
 const About = styled.section`

@@ -31,14 +31,17 @@ export const Navbar = () => {
             <Link to="/" className="nav__logo-container">
               <Logo className="nav__logo" />
             </Link>
-            <Link to="/blogue">Blogue</Link>
+            <Link to="/blog">Blogue</Link>
             <Link to="/contactos">Contactos</Link>
           </div>
         </div>
         <div className="nav__item logo-trust">
-          <Link to="/">
+          <a
+            href="https://laranja2016.wixsite.com/trustconstrucao/"
+            target="_blank"
+          >
             <LogoTrust />
-          </Link>
+          </a>
         </div>
       </div>
 
@@ -68,7 +71,7 @@ const StyledNav = styled.nav`
   top: 0;
   left: 0;
   right: 0;
-  padding: ${({ theme }) => theme.spacingS} ${({ theme }) => theme.spacingL};
+  padding: ${({ theme }) => theme.spacingXS} ${({ theme }) => theme.spacingL};
   background: ${({ theme }) => theme.darkBackground};
   color: ${({ theme }) => theme.lightText};
   z-index: 1;
@@ -142,11 +145,11 @@ const StyledNav = styled.nav`
   }
 
   @media screen and (max-width: 1600px) {
-    padding: ${({ theme }) => theme.spacingS} ${({ theme }) => theme.spacingM};
+    padding: ${({ theme }) => theme.spacingXS} ${({ theme }) => theme.spacingM};
   }
 
   @media screen and (max-width: 1300px) {
-    padding: ${({ theme }) => theme.spacingS};
+    padding: ${({ theme }) => theme.spacingXS} ${({ theme }) => theme.spacingS};
 
     .items a {
       margin: 0 ${({ theme }) => theme.spacingS};

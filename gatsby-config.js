@@ -15,6 +15,28 @@ module.exports = {
     'gatsby-plugin-breakpoints',
     'gatsby-plugin-htaccess',
     {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint:
+          'https://autopecas.us5.list-manage.com/subscribe/post?u=97f0d3af42fa7b7459646b377&amp;id=bedd3d68f1',
+        timeout: 3500,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        gfm: true,
+        plugins: [],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/posts`,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-google-tagmanager',
       options: {
         id: 'ID-AQUI',

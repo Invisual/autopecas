@@ -13,16 +13,23 @@ import { Styled } from '../styles/index.styles'
 
 const IndexPage = () => {
   const logos = [
-    './images/logos/motul.png',
-    './images/logos/autopart.png',
-    './images/logos/bugatti.png',
-    './images/logos/generalricambi.png',
-    './images/logos/blueprint.png',
-    './images/logos/motul.png',
-    './images/logos/autopart.png',
-    './images/logos/bugatti.png',
-    './images/logos/generalricambi.png',
-    './images/logos/blueprint.png',
+    './images/logos/1.svg',
+    './images/logos/2.svg',
+    './images/logos/3.svg',
+    './images/logos/4.svg',
+    './images/logos/5.svg',
+    './images/logos/6.svg',
+    './images/logos/7.svg',
+    './images/logos/8.svg',
+    './images/logos/9.svg',
+    './images/logos/10.svg',
+    './images/logos/11.svg',
+    './images/logos/12.svg',
+    './images/logos/13.svg',
+    './images/logos/14.svg',
+    './images/logos/15.svg',
+    './images/logos/16.svg',
+    './images/logos/17.svg',
   ]
 
   return (
@@ -30,11 +37,12 @@ const IndexPage = () => {
       <SEO title="Home" />
 
       <Styled.Main>
-        <VideoSection
+        {/* <VideoSection
           fullVideo={MainVideo}
           previewVideo={MainVideoPreview}
           mobileImg={'./images/sobre.png'}
-        />
+        /> */}
+        <div className="section-image"></div>
 
         <Styled.About>
           <Title text="Empresa" />
@@ -64,7 +72,7 @@ const IndexPage = () => {
 
         <Styled.Clients>
           <Title text="Marcas Premium" light />
-          <ImageCarousel images={logos} />
+          <ImageCarousel images={logos} alt="Client logo" />
         </Styled.Clients>
 
         <Styled.Blog>
