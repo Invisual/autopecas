@@ -133,6 +133,7 @@ export const FormContainer = styled.div`
       font-weight: ${({ theme }) => theme.fontBold};
       text-transform: uppercase;
       background: transparent;
+      cursor: pointer;
 
       svg {
         width: 0.7rem;
@@ -147,6 +148,14 @@ export const FormContainer = styled.div`
       color: ${(props) =>
         props.light ? props.theme.lightText : props.theme.darkSubTitle};
     }
+  }
+
+  .feedback-message {
+    color: ${({ theme }) => theme.darkText};
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    text-align: center;
+    margin-top: ${({ theme }) => theme.spacingL};
   }
 
   @media screen and (max-width: 1000px) {
