@@ -25,6 +25,10 @@ const Info = styled.section`
 
   .map {
     margin-top: ${({ theme }) => theme.spacingXL};
+
+    iframe {
+      border: none;
+    }
   }
 
   @media screen and (max-width: 800px) {
@@ -32,12 +36,25 @@ const Info = styled.section`
       flex-direction: column;
       gap: ${({ theme }) => theme.spacingL};
     }
+
+    .map {
+      min-height: 60rem;
+
+      iframe {
+        position: absolute;
+        left: 0;
+        right: 0;
+      }
+    }
   }
 `
 
 const Contact = styled.section`
-  margin-top: ${({ theme }) => theme.spacingXL};
   padding-bottom: 0;
+
+  @media screen and (max-width: 1000px) {
+    margin-top: ${({ theme }) => theme.spacingXL};
+  }
 `
 
 export const Styled = {

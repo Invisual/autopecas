@@ -53,7 +53,11 @@ const ContactosPage = () => {
           </div>
 
           <div className="map">
-            <h1 style={{ fontSize: '4rem', textAlign: 'center' }}>MAP HERE</h1>
+            <iframe
+              src="https://snazzymaps.com/embed/349151"
+              width="100%"
+              height="600px"
+            ></iframe>
           </div>
 
           <Styled.Contact>
