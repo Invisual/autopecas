@@ -23,6 +23,7 @@ const StyledButton = styled.button`
   font-size: 1.4rem;
   color: ${({ theme }) => theme.darkTitle};
   text-transform: uppercase;
+  background: transparent;
   border: none;
   border-bottom: 2px solid ${({ theme }) => theme.darkTitle};
   cursor: pointer;
