@@ -1,9 +1,10 @@
-import * as React from 'react'
+import React, { useState } from 'react'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import { Title } from '../components/Title'
 import { Text } from '../components/Text'
 import { CtaLink } from '../components/CtaLink'
+import { BigButton } from '../components/BigButton'
 import { parseBlogPosts } from '../utils/helpers'
 import { Styled } from '../styles/blog.styles'
 import { graphql } from 'gatsby'
@@ -13,6 +14,8 @@ const BlogPage = ({
     allMarkdownRemark: { edges },
   },
 }) => {
+  const [postsNumber, setPostsNumber] = useState(3)
+
   const posts = parseBlogPosts(edges)
   if (!posts || !Boolean(posts.length)) {
     return (
@@ -24,6 +27,10 @@ const BlogPage = ({
       </Layout>
     )
   }
+
+  const seeMorePosts = () => setPostsNumber(postsNumber + 3)
+
+  const visiblePosts = posts.slice(0, postsNumber)
 
   return (
     <Layout>
@@ -43,7 +50,7 @@ const BlogPage = ({
 
         <section className="posts">
           <div className="container">
-            {posts.map((p) => (
+            {visiblePosts.map((p) => (
               <a href={p.path} key={p.path}>
                 <article className="single">
                   <span className="date">{p.date}</span>
@@ -57,6 +64,14 @@ const BlogPage = ({
               </a>
             ))}
           </div>
+
+          {posts.length > postsNumber && (
+            <BigButton
+              text="Ver mais notícias"
+              onClick={() => seeMorePosts()}
+              className="more-posts"
+            />
+          )}
         </section>
       </Styled.Main>
     </Layout>

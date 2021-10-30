@@ -48,9 +48,9 @@ const Main = styled.main`
     .container {
       display: flex;
       align-items: flex-start;
-      justify-content: center;
+      justify-content: flex-start;
       flex-wrap: wrap;
-      gap: 2%;
+      gap: ${({ theme }) => theme.spacingL} 2%;
     }
 
     a {
@@ -87,6 +87,10 @@ const Main = styled.main`
     }
   }
 
+  .more-posts {
+    margin-top: ${({ theme }) => theme.spacingXL};
+  }
+
   @media screen and (max-width: 1600px) {
     .posts a .image {
       height: 65rem;
@@ -121,11 +125,6 @@ const Main = styled.main`
     }
 
     .posts {
-      .container {
-        justify-content: flex-start;
-        gap: 20rem 2%;
-      }
-
       a {
         max-width: 49%;
 
@@ -144,7 +143,7 @@ const Main = styled.main`
 
   @media screen and (max-width: 650px) {
     .posts .container {
-      gap: 15rem 2%;
+      gap: ${({ theme }) => theme.spacingXL} 2%;
     }
     .posts a .image {
       height: 38rem;

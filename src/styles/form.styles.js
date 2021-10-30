@@ -1,29 +1,6 @@
 import styled from 'styled-components'
 
 export const FormContainer = styled.div`
-  .toggle {
-    max-width: 35rem;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: ${({ theme }) => theme.spacingXXS} 0;
-    border-bottom: 2px solid ${({ theme }) => theme.darkTitle};
-    cursor: pointer;
-
-    span {
-      font-size: 1.4rem;
-      color: ${({ theme }) => theme.darkTitle};
-      text-transform: uppercase;
-    }
-
-    svg {
-      stroke: ${({ theme }) => theme.darkSubTitle};
-      transform: ${(props) => (props.isOpen ? 'rotate(180deg)' : 'rotate(0)')};
-      transition: transform 0.25s ease;
-    }
-  }
-
   form {
     width: 75%;
     margin: ${({ theme }) => theme.spacingS} auto 0 auto;

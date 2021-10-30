@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { LoadingSpinner } from './LoadingSpinner'
+import { BigButton } from './BigButton'
 import ChevronIcon from '../assets/images/chevron.svg'
-import ChevronLightIcon from '../assets/images/chevron-thin.svg'
 import { FormContainer } from '../styles/form.styles'
 import axios from 'axios'
 
@@ -77,10 +77,12 @@ export const ContactForm = ({ withToggle }) => {
   return (
     <FormContainer className="contact-form" isOpen={isOpen}>
       {withToggle && (
-        <div className="toggle" onClick={() => setIsOpen(!isOpen)}>
-          <span>Podemos ajudar?</span>
-          <ChevronLightIcon />
-        </div>
+        <BigButton
+          text="Podemos ajudar?"
+          onClick={() => setIsOpen(!isOpen)}
+          className="toggle"
+          isOpen={isOpen}
+        />
       )}
 
       {showForm &&
