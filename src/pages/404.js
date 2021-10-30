@@ -1,53 +1,51 @@
 import * as React from 'react'
+import Layout from '../components/Layout'
+import SEO from '../components/SEO'
+import { Title } from '../components/Title'
+import { Text } from '../components/Text'
+import styled from 'styled-components'
 import { Link } from 'gatsby'
-
-// styles
-const pageStyles = {
-  color: '#232129',
-  padding: '96px',
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: '#8A6534',
-  padding: 4,
-  backgroundColor: '#FFF4DB',
-  fontSize: '1.25rem',
-  borderRadius: 4,
-}
 
 // markup
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{' '}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{' '}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === 'development' ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
+    <Layout>
+      <SEO title="Empresa" />
+      <Styled404>
+        <Title text="Página não encontrada" />
+        <Text>
+          Ups, parece que esta página não existe. Clique{' '}
+          <Link to="/">aqui</Link> para regressar à página inicial.
+        </Text>
+        <h3 className="big-text">404</h3>
+      </Styled404>
+    </Layout>
   )
 }
 
 export default NotFoundPage
+
+const Styled404 = styled.section`
+  .text {
+    margin-top: ${({ theme }) => theme.spacingS};
+    text-align: center;
+
+    a {
+      color: ${({ theme }) => theme.darkBackground};
+      font-weight: ${({ theme }) => theme.fontBold};
+    }
+  }
+
+  .big-text {
+    color: ${({ theme }) => theme.darkBackground};
+    font-size: 25rem;
+    text-align: center;
+    margin-top: ${({ theme }) => theme.spacingL};
+  }
+
+  @media screen and (max-width: 550px) {
+    .big-text {
+      font-size: 10rem;
+    }
+  }
+`
