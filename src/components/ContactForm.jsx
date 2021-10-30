@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { LoadingSpinner } from './LoadingSpinner'
 import ChevronIcon from '../assets/images/chevron.svg'
 import ChevronLightIcon from '../assets/images/chevron-thin.svg'
 import { FormContainer } from '../styles/form.styles'
@@ -11,6 +12,7 @@ export const ContactForm = ({ withToggle }) => {
   const [phone, setPhone] = useState('')
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
   const [isSent, setIsSent] = useState(false)
   const [feedbackMessage, setFeedbackMessage] = useState('')
 
@@ -28,6 +30,7 @@ export const ContactForm = ({ withToggle }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    setIsLoading(true)
 
     const formData = new FormData()
     formData.append('name', name)
@@ -59,7 +62,10 @@ export const ContactForm = ({ withToggle }) => {
           'Houve um erro ao enviar esta candidatura, por favor tente mais tarde.'
         )
       )
-      .finally(() => setIsSent(true))
+      .finally(() => {
+        setIsLoading(false)
+        setIsSent(true)
+      })
   }
 
   useEffect(() => {
@@ -78,7 +84,9 @@ export const ContactForm = ({ withToggle }) => {
       )}
 
       {showForm &&
-        (isSent && feedbackMessage ? (
+        (isLoading ? (
+          <LoadingSpinner />
+        ) : isSent && feedbackMessage ? (
           <p className="feedback-message">{feedbackMessage}</p>
         ) : (
           <form onSubmit={handleSubmit}>

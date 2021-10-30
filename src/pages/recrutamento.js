@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import ChevronIcon from '../assets/images/chevron.svg'
 import { Title } from '../components/Title'
+import { LoadingSpinner } from '../components/LoadingSpinner'
 import { Styled } from '../styles/recrutamento.styles'
 import { FormContainer } from '../styles/form.styles'
 import axios from 'axios'
@@ -24,6 +25,7 @@ const RecrutamentoPage = () => {
   const [phone, setPhone] = React.useState('')
   const [message, setMessage] = React.useState('')
   const [fileName, setFileName] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
   const [isSent, setIsSent] = useState(false)
   const [feedbackMessage, setFeedbackMessage] = useState('')
 
@@ -40,6 +42,7 @@ const RecrutamentoPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    setIsLoading(true)
 
     const formData = new FormData()
     const areaName = areaOptions.find((ar) => ar.val === area).label || '-'
@@ -73,7 +76,10 @@ const RecrutamentoPage = () => {
           'Houve um erro ao enviar esta candidatura, por favor tente mais tarde.'
         )
       )
-      .finally(() => setIsSent(true))
+      .finally(() => {
+        setIsLoading(false)
+        setIsSent(true)
+      })
   }
 
   useEffect(() => {
@@ -90,7 +96,9 @@ const RecrutamentoPage = () => {
         <Title light text="Bolsa de Emprego" />
 
         <FormContainer light className="form-container">
-          {isSent && feedbackMessage ? (
+          {isLoading ? (
+            <LoadingSpinner light />
+          ) : isSent && feedbackMessage ? (
             <p className="feedback-message">{feedbackMessage}</p>
           ) : (
             <form

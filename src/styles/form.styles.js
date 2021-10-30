@@ -150,6 +150,11 @@ export const FormContainer = styled.div`
     }
   }
 
+  .loading {
+    font-size: 0.7rem;
+    margin-top: ${({ theme }) => theme.spacingXL};
+  }
+
   .feedback-message {
     color: ${(props) =>
       props.light ? props.theme.lightText : props.theme.darkText};
