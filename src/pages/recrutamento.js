@@ -43,7 +43,6 @@ const RecrutamentoPage = () => {
 
     const formData = new FormData()
     const areaName = areaOptions.find((ar) => ar.val === area).label || '-'
-    console.log(areaName)
     formData.append('area', areaName)
     formData.append('name', name)
     formData.append('email', email)
@@ -90,11 +89,15 @@ const RecrutamentoPage = () => {
       <Styled.Main>
         <Title light text="Bolsa de Emprego" />
 
-        <FormContainer light>
+        <FormContainer light className="form-container">
           {isSent && feedbackMessage ? (
             <p className="feedback-message">{feedbackMessage}</p>
           ) : (
-            <form onSubmit={handleSubmit}>
+            <form
+              onSubmit={handleSubmit}
+              method="POST"
+              encType="multipart/form-data"
+            >
               <select
                 required
                 defaultValue={area}
@@ -164,6 +167,7 @@ const RecrutamentoPage = () => {
                   <div className="file">
                     <input
                       type="file"
+                      name="file"
                       id="file"
                       accept="application/msword, text/plain, application/pdf"
                       onChange={(e) =>
@@ -171,12 +175,8 @@ const RecrutamentoPage = () => {
                       }
                     />
                     <label htmlFor="file">
-                      {fileName || (
-                        <>
-                          Anexar currículo
-                          <ChevronIcon />
-                        </>
-                      )}
+                      {fileName || 'Anexar currículo'}
+                      <ChevronIcon />
                     </label>
                   </div>
 

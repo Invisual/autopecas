@@ -86,7 +86,7 @@ const Blog = styled.section`
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: ${({ theme }) => theme.spacingXS};
+    margin-top: ${({ theme }) => theme.spacingS};
   }
 
   h4 {
@@ -102,7 +102,7 @@ const Blog = styled.section`
     color: ${({ theme }) => theme.darkText};
     font-size: 1.8rem;
     line-height: 2.5rem;
-    margin-top: ${({ theme }) => theme.spacingXXXS};
+    margin-top: ${({ theme }) => theme.spacingXS};
   }
 
   @media screen and (max-width: 1000px) {

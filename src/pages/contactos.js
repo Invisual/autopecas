@@ -29,7 +29,7 @@ const ContactosPage = () => {
         <Styled.Intro>
           <IntroSection
             text={introText}
-            image="./images/timeline2.png"
+            image="./images/contactos.jpg"
             fontSize="5.8rem"
             lineHeight="8rem"
             letterSpacing="0.58rem"

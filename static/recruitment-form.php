@@ -59,7 +59,7 @@ if (isset($_POST)) {
         $uploadfile = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['file']['name']));
         if (move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile)) {
             $mail->addAttachment($uploadfile, $filename);
-            $mail->Body .= "Ficheiro enviado em anexo.";
+            $mail->Body .= "CV enviado em anexo.";
         }
     }
 

@@ -151,7 +151,8 @@ export const FormContainer = styled.div`
   }
 
   .feedback-message {
-    color: ${({ theme }) => theme.darkText};
+    color: ${(props) =>
+      props.light ? props.theme.lightText : props.theme.darkText};
     font-size: 1.8rem;
     line-height: 2.5rem;
     text-align: center;
