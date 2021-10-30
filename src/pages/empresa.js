@@ -29,7 +29,7 @@ const EmpresaPage = () => {
         <Styled.Intro>
           <IntroSection
             text={introText}
-            image="./images/sobre.png"
+            image="https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609908/sobre_uy974r.png"
             fontSize="7.6rem"
             lineHeight="8.7rem"
             letterSpacing="0.76rem"
@@ -39,7 +39,10 @@ const EmpresaPage = () => {
         <Styled.Timeline>
           <div className="item">
             <div className="image-wrapper">
-              <img src="./images/timeline1.png" alt="2021" />
+              <img
+                src="https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609913/timeline1_l7hicl.png"
+                alt="2021"
+              />
               <h3 className="year-right">2021</h3>
             </div>
             <Text className="right-bottom">
@@ -57,14 +60,20 @@ const EmpresaPage = () => {
               <br /> Mudança para o novo armazém de 5000 m2.
             </Text>
             <div className="image-wrapper">
-              <img src="./images/timeline2.png" alt="2017-2019" />
+              <img
+                src="https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609909/timeline2_lchvn1.png"
+                alt="2017-2019"
+              />
             </div>
             <h3 className="year-centered">2017-2019</h3>
           </div>
 
           <div className="item">
             <div className="image-wrapper">
-              <img src="./images/timeline3.png" alt="2015" />
+              <img
+                src="https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609909/timeline3_owr7vi.png"
+                alt="2015"
+              />
               <h3 className="year-right">2015</h3>
             </div>
             <Text className="right-bottom">
@@ -85,14 +94,20 @@ const EmpresaPage = () => {
               mediante o Volume, Finanças e elevados padrões de Negócios AD.
             </Text>
             <div className="image-wrapper">
-              <img src="./images/timeline4.png" alt="2010" />
+              <img
+                src="https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609908/timeline4_wembit.png"
+                alt="2010"
+              />
               <h3 className="year-left">2010</h3>
             </div>
           </div>
 
           <div className="item centered-year">
             <div className="image-wrapper">
-              <img src="./images/timeline5.png" alt="2007-2009" />
+              <img
+                src="https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609908/timeline5_pyf8wf.png"
+                alt="2007-2009"
+              />
             </div>
             <h3 className="year-centered">2007-2009</h3>
             <Text className="right-center">

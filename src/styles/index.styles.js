@@ -5,7 +5,7 @@ const Main = styled.main`
   overflow-x: hidden;
 
   .section-image {
-    background-image: url('./images/blog.png');
+    background-image: url('https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609908/blog_ew7ghv.png');
     background-size: cover;
     background-position: center;
     width: 100%inherit;

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useState, useEffect } from 'react'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import { VideoSection } from '../components/VideoSection'
@@ -12,17 +12,29 @@ import MainVideoPreview from '../assets/videos/geral-preview.mp4'
 import { Styled } from '../styles/index.styles'
 import { parseBlogPosts } from '../utils/helpers'
 import { graphql } from 'gatsby'
+import axios from 'axios'
 
 const IndexPage = ({
   data: {
     allMarkdownRemark: { edges },
   },
 }) => {
+  const [clientsLogos, setClientsLogos] = useState([])
+
   const post = parseBlogPosts(edges)[0]
 
-  const clientLogos = [...Array(17).keys()].map(
-    (i) => `./images/logos/${i + 1}.svg`
-  )
+  useEffect(() => {
+    axios
+      .get('http://res.cloudinary.com/ddbuiilei/image/list/logo.json')
+      .then((res) => {
+        const logos = res.data.resources.map(
+          (img) =>
+            `https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/${img.public_id}.${img.format}`
+        )
+        setClientsLogos(logos)
+      })
+      .catch((err) => console.log(err))
+  })
 
   return (
     <Layout>
@@ -56,7 +68,10 @@ const IndexPage = ({
               <CtaLink text="saber mais" url="/empresa" className="mbl" />
             </div>
             <div>
-              <img src="./images/sobre.png" alt="Autopeças" />
+              <img
+                src="https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609908/sobre_uy974r.png"
+                alt="Autopeças"
+              />
               <CtaLink text="saber mais" url="/empresa" className="desktop" />
             </div>
           </div>
@@ -64,7 +79,7 @@ const IndexPage = ({
 
         <Styled.Clients>
           <Title text="Marcas Premium" light />
-          <ImageCarousel images={clientLogos} alt="Client logo" />
+          <ImageCarousel images={clientsLogos} alt="Client logo" />
         </Styled.Clients>
 
         {post && (
