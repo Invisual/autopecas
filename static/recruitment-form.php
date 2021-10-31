@@ -43,15 +43,16 @@ if (isset($_POST)) {
     $mail->Subject = "Autopeças | Recrutamento - {$name}";
 
     $mail->Body = "
-        <h2>Nova candidatura no formulário de recrutamento</h2>
-        <br />
-        <p>Nome <strong>{$name}</strong></p>
-        <p>Email <strong>{$email}</strong></p>
-        <p>Telefone <strong>{$phone}</strong></p>
-        <br />
-        <p>Área <strong>{$area}</strong></p>
+      <div style='width: 100%; height: 60px; background: black; margin-bottom: 40px;'></div> 
+      <img src='https://res.cloudinary.com/ddbuiilei/image/upload/f_png/v1635701997/logo_yvtrks.svg' style='margin: 15px 0 15px 25px;' />
+      <h3 style='margin: 15px 0 15px 25px;'>Nova candidatura recebida</h3>
+      <div style='margin: 15px 0 15px 25px;'>
+        <p><span>Nome: <strong>{$name}</strong></span><span style='margin-left:15px;'>Área: <strong>{$area}</strong></span></p>
+        <p><span>Telefone: <strong>{$phone}</strong></span><span style='margin-left:15px;'>Email: <strong>{$email}</strong></span></p>
         <p>Mensagem:</p>
         <p>{$message}</p>
+      </div>
+      <p style='font-size: 11px; margin-top: 30px; margin-left: 25px;'>Mensagem enviada através do formulário de recrutamento no website Autopecas.pt</p>
     ";
 
     if (array_key_exists('file', $_FILES)) {
@@ -59,9 +60,13 @@ if (isset($_POST)) {
         $uploadfile = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['file']['name']));
         if (move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile)) {
             $mail->addAttachment($uploadfile, $filename);
-            $mail->Body .= "CV enviado em anexo.";
+            $mail->Body .= "<p style='font-size: 11px; margin-left: 25px;'>CV enviado em anexo.</p>";
         }
     }
+
+    $mail->Body .= "
+      <div style='width: 100%; height: 60px; background: black; margin-top: 40px;'></div>
+    ";
 
     $mail->send();
 

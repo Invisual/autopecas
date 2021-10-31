@@ -42,14 +42,17 @@ if (isset($_POST)) {
     $mail->Subject = "Autopeças | Formulário - {$subject}";
 
     $mail->Body = "
-        <h2>Nova mensagem no formulário de contacto</h2>
-        <br />
-        <p>Nome <strong>{$name}</strong></p>
-        <p>Email <strong>{$email}</strong></p>
-        <p>Telefone <strong>{$phone}</strong></p>
-        <p>Assunto <strong>{$subject}</strong></p>
+      <div style='width: 100%; height: 60px; background: black; margin-bottom: 40px;'></div> 
+      <img src='https://res.cloudinary.com/ddbuiilei/image/upload/f_png/v1635701997/logo_yvtrks.svg' style='margin: 15px 0 15px 25px;' />
+      <h3 style='margin: 15px 0 15px 25px;'>Nova mensagem recebida</h3>
+      <div style='margin: 15px 0 15px 25px;'>
+        <p><span>Nome: <strong>{$name}</strong></span><span style='margin-left:15px;'>Assunto: <strong>{$subject}</strong></span></p>
+        <p><span>Telefone: <strong>{$phone}</strong></span><span style='margin-left:15px;'>Email: <strong>{$email}</strong></span></p>
         <p>Mensagem:</p>
         <p>{$message}</p>
+      </div>
+      <p style='font-size: 11px; margin-top: 30px; margin-left: 25px;'>Mensagem enviada através do formulário de contacto no website Autopecas.pt</p>
+      <div style='width: 100%; height: 60px; background: black; margin-top: 40px;'></div> 
     ";
 
 
