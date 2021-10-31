@@ -90,7 +90,10 @@ const RecrutamentoPage = () => {
 
   return (
     <Layout>
-      <SEO title="Recrutamento" />
+      <SEO
+        title="Recrutamento"
+        description="AUTOPEÇAS.PT - Aceitamos candidaturas para vir trabalhar connosco. Veja as vagas que temos em aberto."
+      />
 
       <Styled.Main>
         <Title light text="Bolsa de Emprego" />

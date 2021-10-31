@@ -34,7 +34,10 @@ const BlogPage = ({
 
   return (
     <Layout>
-      <SEO title="Blog" />
+      <SEO
+        title="Blog"
+        description="AUTOPEÇAS.PT - Fique a par das últimas novidades da Autopeças.pt."
+      />
       <Styled.Main>
         <section className="highlighted-post">
           <div

@@ -23,7 +23,10 @@ const EmpresaPage = () => {
 
   return (
     <Layout>
-      <SEO title="Empresa" />
+      <SEO
+        title="Empresa"
+        description="AUTOPEÇAS.PT - Fundada em 1996 em Aveiro, contamos com 25 anos de atividade."
+      />
 
       <Styled.Main>
         <Styled.Intro>

@@ -23,7 +23,10 @@ const ContactosPage = () => {
 
   return (
     <Layout>
-      <SEO title="Contactos" />
+      <SEO
+        title="Contactos"
+        description="AUTOPEÇAS.PT - Saiba onde nos encontrar e como nos contactar."
+      />
 
       <Styled.Main>
         <Styled.Intro>

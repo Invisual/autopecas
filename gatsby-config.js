@@ -2,11 +2,14 @@ module.exports = {
   siteMetadata: {
     title: 'Autopeças.pt',
     titleTemplate: '%s · Autopeças.pt',
-    description: 'AUTOPEÇAS.PT - Peças para automóveis',
+    description:
+      'AUTOPEÇAS.PT - Peças para automóveis, situado na Gafanha da Encarnação - Aveiro. Mais de 25 anos de experiência.',
     url: 'https://autopecas.pt',
     siteUrl: 'https://autopecas.pt',
-    image: 'https://autopecas.pt/logo.png',
-    defaultImage: 'https://autopecas.pt/logo.png',
+    image:
+      'https://res.cloudinary.com/ddbuiilei/image/upload/f_png/v1635704882/logo2_ntgg80.svg',
+    defaultImage:
+      'https://res.cloudinary.com/ddbuiilei/image/upload/f_png/v1635704882/logo2_ntgg80.svg',
   },
   plugins: [
     'gatsby-plugin-styled-components',
