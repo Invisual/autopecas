@@ -75,7 +75,14 @@ export const ContactForm = ({ withToggle }) => {
   }, [isSent])
 
   return (
-    <FormContainer className="contact-form" isOpen={isOpen}>
+    <FormContainer
+      className="contact-form"
+      isOpen={isOpen}
+      data-sal="fade"
+      data-sal-easing="ease"
+      data-sal-duration="600"
+      data-sal-delay="200"
+    >
       {withToggle && (
         <BigButton
           text="Podemos ajudar?"
@@ -85,72 +92,74 @@ export const ContactForm = ({ withToggle }) => {
         />
       )}
 
-      {showForm &&
-        (isLoading ? (
-          <LoadingSpinner />
-        ) : isSent && feedbackMessage ? (
-          <p className="feedback-message">{feedbackMessage}</p>
-        ) : (
-          <form onSubmit={handleSubmit}>
+      {isLoading ? (
+        <LoadingSpinner />
+      ) : isSent && feedbackMessage ? (
+        <p className="feedback-message">{feedbackMessage}</p>
+      ) : (
+        <form
+          onSubmit={handleSubmit}
+          className={showForm ? 'animated show' : 'animated'}
+        >
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Nome"
+            required
+          />
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+            required
+          />
+          <div className="flex">
             <input
               type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Nome"
-              required
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="Telefone"
             />
             <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email"
+              type="text"
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
+              placeholder="Assunto"
               required
             />
-            <div className="flex">
-              <input
-                type="text"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                placeholder="Telefone"
-              />
-              <input
-                type="text"
-                value={subject}
-                onChange={(e) => setSubject(e.target.value)}
-                placeholder="Assunto"
-                required
-              />
+          </div>
+          <textarea
+            type="text"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Mensagem"
+            required
+          />
+          <div className="flex checkboxes">
+            <div>
+              <label>
+                <input type="checkbox" required />{' '}
+                <span>Li e aceito a Política de Privacidade</span>
+              </label>
+              <label>
+                <input type="checkbox" required />{' '}
+                <span>
+                  Aceito partilhar o meu nome, telefone e endereço de email para
+                  os fins mencionados
+                </span>
+              </label>
             </div>
-            <textarea
-              type="text"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              placeholder="Mensagem"
-              required
-            />
-            <div className="flex checkboxes">
-              <div>
-                <label>
-                  <input type="checkbox" required />{' '}
-                  <span>Li e aceito a Política de Privacidade</span>
-                </label>
-                <label>
-                  <input type="checkbox" required />{' '}
-                  <span>
-                    Aceito partilhar o meu nome, telefone e endereço de email
-                    para os fins mencionados
-                  </span>
-                </label>
-              </div>
 
-              <div className="buttons">
-                <button>
-                  Enviar <ChevronIcon />
-                </button>
-              </div>
+            <div className="buttons">
+              <button>
+                Enviar <ChevronIcon />
+              </button>
             </div>
-          </form>
-        ))}
+          </div>
+        </form>
+      )}
     </FormContainer>
   )
 }

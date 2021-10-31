@@ -24,7 +24,7 @@ export const GlobalStyle = createGlobalStyle`
         text-decoration: none;
     }
 
-    input, input:focus, input:active {
+    input, input:focus, input:active, textarea, textarea:focus, textarea:active {
         outline: none;
         border: none;
     }

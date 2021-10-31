@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export const Title = ({ text, light }) => (
-  <StyledTitle light={light}>{text}</StyledTitle>
+export const Title = ({ text, light, ...props }) => (
+  <StyledTitle light={light} {...props}>
+    {text}
+  </StyledTitle>
 )
 
 const StyledTitle = styled.h2`

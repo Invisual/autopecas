@@ -17,6 +17,10 @@ export const IntroSection = ({
       letterSpacing={letterSpacing}
       topLineWidth={topLineWidth}
       topLineSpacing={topLineSpacing}
+      data-sal="fade"
+      data-sal-easing="ease"
+      data-sal-duration="600"
+      data-sal-delay="100"
     >
       {text}
       <div className="image-wrapper">

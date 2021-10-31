@@ -20,6 +20,11 @@ const Info = styled.section`
     p {
       font-size: 2.5rem;
       color: ${({ theme }) => theme.darkSubTitle};
+      transition: color 0.25s ease;
+
+      &:hover {
+        color: ${({ theme }) => theme.darkBackground};
+      }
     }
   }
 

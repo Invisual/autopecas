@@ -5,6 +5,18 @@ export const FormContainer = styled.div`
     width: 75%;
     margin: ${({ theme }) => theme.spacingS} auto 0 auto;
 
+    &.animated {
+      transform: scaleY(0);
+      transform-origin: top;
+      overflow: hidden;
+      max-height: 0;
+      transition: transform 0.2s ease;
+    }
+    &.show {
+      transform: scaleY(1);
+      max-height: 100%;
+    }
+
     .flex {
       display: flex;
       align-items: center;
@@ -39,12 +51,22 @@ export const FormContainer = styled.div`
       padding: ${({ theme }) => theme.spacingXS} 0;
       border: none;
       border-bottom: 2px solid ${({ theme }) => theme.darkTitle};
+      transition: all 0.25s ease;
 
       &::placeholder {
         color: ${(props) =>
           props.light ? props.theme.lightText : props.theme.darkTitle};
         font-size: 1.8rem;
         opacity: 1;
+      }
+
+      &:active,
+      &:focus {
+        border-bottom: 2px solid
+          ${(props) =>
+            props.light
+              ? props.theme.lightBackground
+              : props.theme.darkBackground};
       }
     }
 

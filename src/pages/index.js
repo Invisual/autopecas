@@ -25,7 +25,7 @@ const IndexPage = ({
 
   useEffect(() => {
     axios
-      .get('http://res.cloudinary.com/ddbuiilei/image/list/logo.json')
+      .get('https://res.cloudinary.com/ddbuiilei/image/list/logo.json')
       .then((res) => {
         const logos = res.data.resources.map(
           (img) =>
@@ -34,7 +34,7 @@ const IndexPage = ({
         setClientsLogos(logos)
       })
       .catch((err) => console.log(err))
-  })
+  }, [])
 
   return (
     <Layout>
@@ -52,8 +52,19 @@ const IndexPage = ({
           <Title text="Empresa" />
           <div className="about-container">
             <div className="text-wrapper">
-              <h3>Agora somos: a AUTOPEÇAS.PT.</h3>
-              <Text>
+              <h3
+                data-sal="slide-up"
+                data-sal-easing="ease"
+                data-sal-duration="600"
+              >
+                Agora somos: a AUTOPEÇAS.PT.
+              </h3>
+              <Text
+                data-sal="slide-up"
+                data-sal-delay="250"
+                data-sal-duration="700"
+                data-sal-easing="ease"
+              >
                 Com 25 anos de experiência no setor, somos uma incubadora de
                 soluções para as empresas do Grupo Trustauto, colocando no
                 mercado ferramentas competitivas e diferenciadoras,
@@ -67,7 +78,12 @@ const IndexPage = ({
 
               <CtaLink text="saber mais" url="/empresa" className="mbl" />
             </div>
-            <div>
+            <div
+              data-sal="slide-up"
+              data-sal-delay="250"
+              data-sal-easing="ease"
+              data-sal-duration="700"
+            >
               <img
                 src="https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609908/sobre_uy974r.png"
                 alt="Autopeças"
@@ -78,14 +94,25 @@ const IndexPage = ({
         </Styled.About>
 
         <Styled.Clients>
-          <Title text="Marcas Premium" light />
+          <Title
+            text="Marcas Premium"
+            light
+            data-sal="fade"
+            data-sal-easing="ease"
+            data-sal-duration="600"
+          />
           <ImageCarousel images={clientsLogos} alt="Client logo" />
         </Styled.Clients>
 
         {post && (
           <Styled.Blog>
             <Title text="Blogue" />
-            <div className="wrapper">
+            <div
+              className="wrapper"
+              data-sal="fade"
+              data-sal-easing="ease"
+              data-sal-duration="300"
+            >
               <h4 className="mbl">{post.title}</h4>
               <img src={post.img} alt={post.title} />
               <div className="text">

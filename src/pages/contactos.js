@@ -40,7 +40,12 @@ const ContactosPage = () => {
 
         <Styled.Info>
           <Title text="Contactos" />
-          <div className="contact-info">
+          <div
+            className="contact-info"
+            data-sal="slide-up"
+            data-sal-easing="ease"
+            data-sal-duration="600"
+          >
             <p>
               <a href="mailto:comercial@autopecas.pt">comercial@autopecas.pt</a>
             </p>

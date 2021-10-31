@@ -120,7 +120,11 @@ const EmpresaPage = () => {
           </div>
         </Styled.Timeline>
 
-        <Styled.Counters>
+        <Styled.Counters
+          data-sal="slide-up"
+          data-sal-easing="ease"
+          data-sal-duration="600"
+        >
           <div className="counter">
             <h3>+500mil</h3>
             <Text>Unidades vendidas por ano</Text>

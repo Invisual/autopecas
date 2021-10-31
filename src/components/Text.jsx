@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export const Text = ({ children, light, className }) => (
+export const Text = ({ children, light, className, ...props }) => (
   <StyledText
     light={light}
     className={className ? `text ${className}` : 'text'}
+    {...props}
   >
     {children}
   </StyledText>

@@ -42,9 +42,22 @@ const BlogPage = ({
             style={{ backgroundImage: `url(${posts[0].img})` }}
           ></div>
           <div className="content">
-            <h1>{posts[0].title}</h1>
+            <h1
+              data-sal="slide-right"
+              data-sal-easing="ease"
+              data-sal-duration="600"
+            >
+              {posts[0].title}
+            </h1>
             <Text light>{posts[0].description}</Text>
-            <CtaLink light text="saber mais" url={posts[0].path} />
+            <CtaLink
+              light
+              text="saber mais"
+              url={posts[0].path}
+              data-sal="slide-left"
+              data-sal-easing="ease"
+              data-sal-duration="600"
+            />
           </div>
         </section>
 

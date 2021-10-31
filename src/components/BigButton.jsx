@@ -27,10 +27,21 @@ const StyledButton = styled.button`
   border: none;
   border-bottom: 2px solid ${({ theme }) => theme.darkTitle};
   cursor: pointer;
+  transition: all 0.25s ease;
 
   svg {
     stroke: ${({ theme }) => theme.darkSubTitle};
     transform: ${(props) => (props.isOpen ? 'rotate(180deg)' : 'rotate(0)')};
-    transition: transform 0.25s ease;
+    transition: all 0.25s ease;
+  }
+
+  &:active,
+  &:hover {
+    color: ${({ theme }) => theme.darkBackground};
+    border-bottom: 2px solid ${({ theme }) => theme.darkBackground};
+
+    svg {
+      stroke: ${({ theme }) => theme.darkTitle};
+    }
   }
 `

@@ -41,7 +41,12 @@ export const ImageCarousel = ({ images, alt }) => {
 
   return (
     <>
-      <StyledCarousel className="carousel desktop">
+      <StyledCarousel
+        className="carousel desktop "
+        data-sal="fade"
+        data-sal-easing="ease"
+        data-sal-duration="600"
+      >
         <Slider {...settings}>
           {images.map((src) => (
             <div key={src}>
