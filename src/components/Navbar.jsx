@@ -19,6 +19,7 @@ export const Navbar = () => {
           <a
             href="https://autopecas.pt/wp-login.php?redirect_to=https%3A%2F%2Fautopecas.pt%2Farea-de-clientes"
             target="_blank"
+            rel="noopener"
           >
             <UserIcon />
             Área Cliente
@@ -39,6 +40,7 @@ export const Navbar = () => {
           <a
             href="https://laranja2016.wixsite.com/trustconstrucao/"
             target="_blank"
+            rel="noopener"
           >
             <LogoTrust />
           </a>

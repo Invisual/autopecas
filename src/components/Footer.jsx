@@ -48,14 +48,22 @@ export const Footer = () => {
 
         <div className="footer__item footer__links">
           <Link to="/politicaprivacidade">Política de Privacidade</Link>
-          <a href="https://www.livroreclamacoes.pt/inicio" target="_blank">
+          <a
+            href="https://www.livroreclamacoes.pt/inicio"
+            target="_blank"
+            rel="noopener"
+          >
             Livro de Reclamações
           </a>
         </div>
 
         <div className="footer__item">
           <div className="social-icons">
-            <a href="https://www.facebook.com/AutoPecasGafanha" target="_blank">
+            <a
+              href="https://www.facebook.com/AutoPecasGafanha"
+              target="_blank"
+              rel="noopener"
+            >
               <FacebookIcon />
             </a>
             <Link to="/">

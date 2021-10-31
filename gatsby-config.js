@@ -40,19 +40,9 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-google-tagmanager',
-      options: {
-        id: 'ID-AQUI',
-        includeInDevelopment: false,
-        defaultDataLayer: {
-          platform: 'gatsby',
-        },
-      },
-    },
-    {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: ['ID-AQUI'],
+        trackingIds: ['G-XSL8KLSH0M'],
         gtagConfig: {
           anonymize_ip: true,
           cookie_expires: 0,
