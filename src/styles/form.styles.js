@@ -170,7 +170,7 @@ export const FormContainer = styled.div`
       .flex {
         display: block;
 
-        input:not([type='checkbox']) {
+        input:not([type='checkbox']):not([type='file']) {
           width: 100% !important;
         }
       }
