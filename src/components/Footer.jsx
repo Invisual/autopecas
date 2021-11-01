@@ -6,7 +6,7 @@ import LinkedinIcon from '../assets/images/linkedin.svg'
 import ChevronIcon from '../assets/images/chevron.svg'
 import styled from 'styled-components'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
-import { Link } from 'gatsby'
+import { Link, StaticQuery, graphql } from 'gatsby'
 
 export const Footer = () => {
   const [email, setEmail] = useState('')
@@ -27,78 +27,109 @@ export const Footer = () => {
   }, [success])
 
   return (
-    <StyledFooter>
-      <div className="footer__container">
-        <div className="footer__item">
-          <Logo />
-        </div>
-        <div className="footer__item">
-          <p>
-            Zona Industrial da Mota | Rua 6 Lote 9-A9
-            <br />
-            3830-527 Gafanha da Encarnação
-          </p>
-          <p>
-            Apoio Cliente: +351 234 397 700
-            <br />
-            <a href="mailto:comercial@autopecas.pt">comercial@autopecas.pt</a> |
-            <a href="mailto:geral@autopecas.pt">geral@autopecas.pt</a>
-          </p>
-        </div>
+    <StaticQuery
+      query={graphql`
+        query {
+          contentJson {
+            footer {
+              address
+              clientSupport
+              email1
+              email2
+              privacyPolicy
+              privacyPolicyUrl
+              complaintsBook
+              complaintsBookUrl
+              facebookUrl
+              instagramUrl
+              linkedinUrl
+              newsletter
+              emailInput
+              createdBy
+            }
+          }
+        }
+      `}
+      render={({ contentJson: { footer: pageContent } }) => (
+        <StyledFooter>
+          <div className="footer__container">
+            <div className="footer__item">
+              <Link to="/">
+                <Logo />
+              </Link>
+            </div>
+            <div className="footer__item">
+              <p dangerouslySetInnerHTML={{ __html: pageContent.address }} />
+              <p>
+                {pageContent.clientSupport}
+                <br />
+                <a href={`mailto:${pageContent.email1}`}>
+                  {pageContent.email1}
+                </a>{' '}
+                |
+                <a href={`mailto:${pageContent.email2}`}>
+                  {pageContent.email2}
+                </a>
+              </p>
+            </div>
 
-        <div className="footer__item footer__links">
-          <Link to="/politicaprivacidade">Política de Privacidade</Link>
-          <a
-            href="https://www.livroreclamacoes.pt/inicio"
-            target="_blank"
-            rel="noopener"
-          >
-            Livro de Reclamações
-          </a>
-        </div>
+            <div className="footer__item footer__links">
+              <Link to={pageContent.privacyPolicyUrl}>
+                {pageContent.privacyPolicy}
+              </Link>
+              <a
+                href={pageContent.complaintsBookUrl}
+                target="_blank"
+                rel="noopener"
+              >
+                {pageContent.complaintsBook}
+              </a>
+            </div>
 
-        <div className="footer__item">
-          <div className="social-icons">
-            <a
-              href="https://www.facebook.com/AutoPecasGafanha"
-              target="_blank"
-              rel="noopener"
-            >
-              <FacebookIcon />
-            </a>
-            <Link to="/">
-              <InstagramIcon />
-            </Link>
-            <Link to="/">
-              <LinkedinIcon />
-            </Link>
+            <div className="footer__item">
+              <div className="social-icons">
+                <a
+                  href={pageContent.facebookUrl}
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <FacebookIcon />
+                </a>
+                <a href={pageContent.instagramUrl}>
+                  <InstagramIcon />
+                </a>
+                <a href={pageContent.linkedinUrl}>
+                  <LinkedinIcon />
+                </a>
+              </div>
+
+              <div className="newsletter">
+                <p>{pageContent.newsletter}</p>
+                {success === true ? (
+                  <p>Obrigado por subscrever!</p>
+                ) : success === false ? (
+                  <p>Ocorreu um erro, tente de novo.</p>
+                ) : (
+                  <form onSubmit={handleSubmit}>
+                    <input
+                      type="email"
+                      placeholder={pageContent.emailInput}
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <button>
+                      <ChevronIcon />
+                    </button>
+                  </form>
+                )}
+              </div>
+            </div>
+
+            <span className="created">{pageContent.createdBy}</span>
           </div>
-
-          <div className="newsletter">
-            <p>Subscreva a nossa newsletter</p>
-            {success === true ? (
-              <p>Obrigado por subscrever!</p>
-            ) : success === false ? (
-              <p>Ocorreu um erro, tente de novo.</p>
-            ) : (
-              <form onSubmit={handleSubmit}>
-                <input
-                  type="email"
-                  placeholder="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <button>
-                  <ChevronIcon />
-                </button>
-              </form>
-            )}
-          </div>
-        </div>
-
-        <span className="created">Created: Invisual.pt</span>
-      </div>
-    </StyledFooter>
+        </StyledFooter>
+      )}
+    />
   )
 }
 

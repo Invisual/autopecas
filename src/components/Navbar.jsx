@@ -7,64 +7,83 @@ import HamburguerIcon from '../assets/images/hamburguer.svg'
 import CloseMenuIcon from '../assets/images/close-menu.svg'
 import UserIcon from '../assets/images/user.svg'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
+import { Link, StaticQuery, graphql } from 'gatsby'
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   return (
-    <StyledNav isOpen={isOpen}>
-      <div className="nav__container">
-        <Badge className="badge" />
-        <div className="nav__item client-area">
-          <a
-            href="https://autopecas.pt/wp-login.php?redirect_to=https%3A%2F%2Fautopecas.pt%2Farea-de-clientes"
-            target="_blank"
-            rel="noopener"
-          >
-            <UserIcon />
-            Área Cliente
-          </a>
-        </div>
-        <div className="nav__item">
-          <div className="items">
-            <Link to="/empresa">Empresa</Link>
-            <Link to="/recrutamento">Recrutamento</Link>
-            <Link to="/" className="nav__logo-container">
-              <Logo className="nav__logo" />
-            </Link>
-            <Link to="/blog">Blogue</Link>
-            <Link to="/contactos">Contactos</Link>
+    <StaticQuery
+      query={graphql`
+        query {
+          contentJson {
+            navbar {
+              clientArea
+              clientAreaUrl
+              navItem1
+              navItem1Url
+              navItem2
+              navItem2Url
+              navItem3
+              navItem3Url
+              navItem4
+              navItem4Url
+              trustUrl
+            }
+          }
+        }
+      `}
+      render={({ contentJson: { navbar: pageContent } }) => (
+        <StyledNav isOpen={isOpen}>
+          <div className="nav__container">
+            <Badge className="badge" />
+            <div className="nav__item client-area">
+              <a
+                href={pageContent.clientAreaUrl}
+                target="_blank"
+                rel="noopener"
+              >
+                <UserIcon />
+                {pageContent.clientArea}
+              </a>
+            </div>
+            <div className="nav__item">
+              <div className="items">
+                <Link to={pageContent.navItem1Url}>{pageContent.navItem1}</Link>
+                <Link to={pageContent.navItem2Url}>{pageContent.navItem2}</Link>
+                <Link to="/" className="nav__logo-container">
+                  <Logo className="nav__logo" />
+                </Link>
+                <Link to={pageContent.navItem3Url}>{pageContent.navItem3}</Link>
+                <Link to={pageContent.navItem4Url}>{pageContent.navItem4}</Link>
+              </div>
+            </div>
+            <div className="nav__item logo-trust">
+              <a href={pageContent.trustUrl} target="_blank" rel="noopener">
+                <LogoTrust />
+              </a>
+            </div>
           </div>
-        </div>
-        <div className="nav__item logo-trust">
-          <a
-            href="https://laranja2016.wixsite.com/trustconstrucao/"
-            target="_blank"
-            rel="noopener"
-          >
-            <LogoTrust />
-          </a>
-        </div>
-      </div>
 
-      {!isOpen && (
-        <Link to="/">
-          <MobileLogo className="nav__mobile-logo mbl" />
-        </Link>
-      )}
+          {!isOpen && (
+            <Link to="/">
+              <MobileLogo className="nav__mobile-logo mbl" />
+            </Link>
+          )}
 
-      {isOpen ? (
-        <CloseMenuIcon
-          className="nav__toggle close mbl"
-          onClick={() => setIsOpen(!isOpen)}
-        />
-      ) : (
-        <HamburguerIcon
-          className="nav__toggle mbl"
-          onClick={() => setIsOpen(!isOpen)}
-        />
+          {isOpen ? (
+            <CloseMenuIcon
+              className="nav__toggle close mbl"
+              onClick={() => setIsOpen(!isOpen)}
+            />
+          ) : (
+            <HamburguerIcon
+              className="nav__toggle mbl"
+              onClick={() => setIsOpen(!isOpen)}
+            />
+          )}
+        </StyledNav>
       )}
-    </StyledNav>
+    />
   )
 }
 

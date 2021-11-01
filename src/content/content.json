@@ -82,5 +82,34 @@
     "mandatoryFields": "* campos de preenchimento obrigatório",
     "defaultArea": "Procuramos profissionais excelentes para as seguintes áreas",
     "button": "Enviar"
+  },
+  "navbar": {
+    "clientArea": "Área Cliente",
+    "clientAreaUrl": "https://autopecas.pt/wp-login.php?redirect_to=https%3A%2F%2Fautopecas.pt%2Farea-de-clientes",
+    "navItem1": "Empresa",
+    "navItem1Url": "/empresa",
+    "navItem2": "Recrutamento",
+    "navItem2Url": "/recrutamento",
+    "navItem3": "Blogue",
+    "navItem3Url": "/blog",
+    "navItem4": "Contactos",
+    "navItem4Url": "/contactos",
+    "trustUrl": "https://laranja2016.wixsite.com/trustconstrucao/"
+  },
+  "footer": {
+    "address": "Zona Industrial da Mota | Rua 6 Lote 9-A9 <br />3830-527 Gafanha da Encarnação",
+    "clientSupport": "Apoio Cliente: +351 234 397 700",
+    "email1": "comercial@autopecas.pt",
+    "email2": "geral@autopecas.pt",
+    "privacyPolicy": "Política de Privacidade",
+    "privacyPolicyUrl": "/politicaprivacidade",
+    "complaintsBook": "Livro de Reclamações",
+    "complaintsBookUrl": "https://www.livroreclamacoes.pt/inicio",
+    "facebookUrl": "https://www.facebook.com/AutoPecasGafanha",
+    "instagramUrl": "#",
+    "linkedinUrl": "#",
+    "newsletter": "Subscreva a nossa newsletter",
+    "emailInput": "email",
+    "createdBy": "Created: Invisual.pt"
   }
 }
