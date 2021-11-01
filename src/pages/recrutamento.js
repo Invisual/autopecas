@@ -7,6 +7,7 @@ import { LoadingSpinner } from '../components/LoadingSpinner'
 import { Styled } from '../styles/recrutamento.styles'
 import { FormContainer } from '../styles/form.styles'
 import axios from 'axios'
+import { graphql } from 'gatsby'
 
 const areaOptions = [
   {
@@ -18,7 +19,11 @@ const areaOptions = [
   { val: 'armazem', label: 'Armazém' },
 ]
 
-const RecrutamentoPage = () => {
+const RecrutamentoPage = ({
+  data: {
+    contentJson: { recrutamento: pageContent, formularios: formContent },
+  },
+}) => {
   const [area, setArea] = React.useState('')
   const [name, setName] = React.useState('')
   const [email, setEmail] = React.useState('')
@@ -96,7 +101,7 @@ const RecrutamentoPage = () => {
       />
 
       <Styled.Main>
-        <Title light text="Bolsa de Emprego" />
+        <Title light text={pageContent.title} />
 
         <FormContainer light className="form-container">
           {isLoading ? (
@@ -115,7 +120,7 @@ const RecrutamentoPage = () => {
                 onChange={(e) => setArea(e.target.value)}
               >
                 <option value="" disabled>
-                  Procuramos profissionais excelentes para as seguintes áreas
+                  {formContent.defaultArea}
                 </option>
                 {areaOptions.map((area) => (
                   <option key={area.val} value={area.val}>
@@ -128,7 +133,7 @@ const RecrutamentoPage = () => {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Nome*"
+                placeholder={formContent.input1 + '*'}
                 required
               />
               <div className="flex">
@@ -136,7 +141,7 @@ const RecrutamentoPage = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Email*"
+                  placeholder={formContent.input2 + '*'}
                   required
                   style={{ width: '60%' }}
                 />
@@ -145,7 +150,7 @@ const RecrutamentoPage = () => {
                   type="text"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  placeholder="Telefone"
+                  placeholder={formContent.input3}
                   style={{ width: '30%' }}
                 />
               </div>
@@ -153,24 +158,21 @@ const RecrutamentoPage = () => {
                 type="text"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="Mensagem"
+                placeholder={formContent.textarea}
                 required
               />
 
-              <p className="footnote">* campos de preenchimento obrigatório</p>
+              <p className="footnote">{formContent.mandatoryFields}</p>
 
               <div className="flex checkboxes">
                 <div>
                   <label>
                     <input type="checkbox" required />{' '}
-                    <span>Li e aceito a Política de Privacidade</span>
+                    <span>{formContent.checkbox1}</span>
                   </label>
                   <label>
                     <input type="checkbox" required />{' '}
-                    <span>
-                      Aceito partilhar o meu nome, telefone e endereço de email
-                      para os fins mencionados
-                    </span>
+                    <span>{formContent.checkbox2}</span>
                   </label>
                 </div>
 
@@ -186,13 +188,13 @@ const RecrutamentoPage = () => {
                       }
                     />
                     <label htmlFor="file">
-                      {fileName || 'Anexar currículo'}
+                      {fileName || formContent.file}
                       <ChevronIcon />
                     </label>
                   </div>
 
                   <button>
-                    Enviar <ChevronIcon />
+                    {formContent.button} <ChevronIcon />
                   </button>
                 </div>
               </div>
@@ -205,3 +207,28 @@ const RecrutamentoPage = () => {
 }
 
 export default RecrutamentoPage
+
+export const pageQuery = graphql`
+  query {
+    contentJson {
+      recrutamento {
+        title
+      }
+      formularios {
+        toggle
+        input1
+        input2
+        input3
+        input4
+        select
+        textarea
+        checkbox1
+        checkbox2
+        file
+        mandatoryFields
+        defaultArea
+        button
+      }
+    }
+  }
+`

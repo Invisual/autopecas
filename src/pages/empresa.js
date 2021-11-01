@@ -5,22 +5,13 @@ import { IntroSection } from '../components/IntroSection'
 import { Text } from '../components/Text'
 import { ContactForm } from '../components/ContactForm'
 import { Styled } from '../styles/empresa.styles'
+import { graphql } from 'gatsby'
 
-const EmpresaPage = () => {
-  const introText = (
-    <>
-      Fundada em <span>1996</span>
-      <br />
-      em <span>Aveiro</span> já
-      <br />
-      conta com
-      <br />
-      <span>25 anos</span> de
-      <br />
-      atividade
-    </>
-  )
-
+const EmpresaPage = ({
+  data: {
+    contentJson: { empresa: pageContent, formularios: formContent },
+  },
+}) => {
   return (
     <Layout>
       <SEO
@@ -31,8 +22,8 @@ const EmpresaPage = () => {
       <Styled.Main>
         <Styled.Intro>
           <IntroSection
-            text={introText}
-            image="https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609908/sobre_uy974r.png"
+            text={pageContent.title}
+            image={pageContent.img}
             fontSize="7.6rem"
             lineHeight="8.7rem"
             letterSpacing="0.76rem"
@@ -43,83 +34,71 @@ const EmpresaPage = () => {
           <div className="item">
             <div className="image-wrapper">
               <img
-                src="https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609913/timeline1_l7hicl.png"
-                alt="2021"
+                src={pageContent.timeline1.img}
+                alt={pageContent.timeline1.year}
               />
-              <h3 className="year-right">2021</h3>
+              <h3 className="year-right">{pageContent.timeline1.year}</h3>
             </div>
-            <Text className="right-bottom">
-              Rebranding da marca:
-              <br />A APG - Auto Peças Gafanha da Nazaré denomina-se agora de
-              AUTOPEÇAS.PT
-            </Text>
+            <Text
+              className="right-bottom"
+              dangerouslySetInnerHTML={{ __html: pageContent.timeline1.text }}
+            />
           </div>
 
           <div className="item right centered-year">
-            <Text className="left-center">
-              Autopeças é um dos membros fundadores e acionistas do Grupo
-              TRUSTauto;
-              <br />
-              <br /> Mudança para o novo armazém de 5000 m2.
-            </Text>
+            <Text
+              className="left-center"
+              dangerouslySetInnerHTML={{ __html: pageContent.timeline2.text }}
+            />
             <div className="image-wrapper">
               <img
-                src="https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609909/timeline2_lchvn1.png"
-                alt="2017-2019"
+                src={pageContent.timeline2.img}
+                alt={pageContent.timeline2.year}
               />
             </div>
-            <h3 className="year-centered">2017-2019</h3>
+            <h3 className="year-centered">{pageContent.timeline2.year}</h3>
           </div>
 
           <div className="item">
             <div className="image-wrapper">
               <img
-                src="https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609909/timeline3_owr7vi.png"
-                alt="2015"
+                src={pageContent.timeline3.img}
+                alt={pageContent.timeline3.year}
               />
-              <h3 className="year-right">2015</h3>
+              <h3 className="year-right">{pageContent.timeline3.year}</h3>
             </div>
-            <Text className="right-bottom">
-              Novo Armazém;
-              <br />
-              Associado fundador da AD AfterMarket;
-              <br />
-              Empresa destacada consecutivamente pela Revista "TOP 100 - Maiores
-              distribuidores do AfterMarket".
-            </Text>
+            <Text
+              className="right-bottom"
+              dangerouslySetInnerHTML={{ __html: pageContent.timeline3.text }}
+            />
           </div>
 
           <div className="item right">
-            <Text className="left-bottom">
-              O Estatuto PME Líder é atribuído pelo IAPMEI;
-              <br />
-              Eleita "Top Associate to AD Portugal" - distingue a empresa
-              mediante o Volume, Finanças e elevados padrões de Negócios AD.
-            </Text>
+            <Text
+              className="left-bottom"
+              dangerouslySetInnerHTML={{ __html: pageContent.timeline4.text }}
+            />
             <div className="image-wrapper">
               <img
-                src="https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609908/timeline4_wembit.png"
-                alt="2010"
+                src={pageContent.timeline4.img}
+                alt={pageContent.timeline4.year}
               />
-              <h3 className="year-left">2010</h3>
+              <h3 className="year-left">{pageContent.timeline4.year}</h3>
             </div>
           </div>
 
           <div className="item centered-year">
             <div className="image-wrapper">
               <img
-                src="https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609908/timeline5_pyf8wf.png"
-                alt="2007-2009"
+                src={pageContent.timeline5.img}
+                alt={pageContent.timeline5.year}
               />
             </div>
-            <h3 className="year-centered">2007-2009</h3>
-            <Text className="right-center">
-              Nova loja e armazém;
-              <br />
-              Exportação para África;
-              <br />
-              Exportação para a União Europeia.
-            </Text>
+            <h3 className="year-centered">{pageContent.timeline5.year}</h3>
+            <Text
+              className="right-center"
+              dangerouslySetInnerHTML={{ __html: pageContent.timeline5.text }}
+            />
           </div>
         </Styled.Timeline>
 
@@ -129,23 +108,23 @@ const EmpresaPage = () => {
           data-sal-duration="600"
         >
           <div className="counter">
-            <h3>+500mil</h3>
-            <Text>Unidades vendidas por ano</Text>
+            <h3>{pageContent.numbers1.value}</h3>
+            <Text>{pageContent.numbers1.label}</Text>
           </div>
 
           <div className="counter">
-            <h3>+30mil</h3>
-            <Text>Referências vendidas por ano</Text>
+            <h3>{pageContent.numbers2.value}</h3>
+            <Text>{pageContent.numbers2.label}</Text>
           </div>
 
           <div className="counter">
-            <h3>+40</h3>
-            <Text>Marcas Premium</Text>
+            <h3>{pageContent.numbers3.value}</h3>
+            <Text>{pageContent.numbers3.label}</Text>
           </div>
         </Styled.Counters>
 
         <Styled.Contact>
-          <ContactForm withToggle />
+          <ContactForm withToggle content={formContent} />
         </Styled.Contact>
       </Styled.Main>
     </Layout>
@@ -153,3 +132,63 @@ const EmpresaPage = () => {
 }
 
 export default EmpresaPage
+
+export const pageQuery = graphql`
+  query {
+    contentJson {
+      empresa {
+        title
+        img
+        timeline1 {
+          year
+          img
+          text
+        }
+        timeline2 {
+          year
+          img
+          text
+        }
+        timeline3 {
+          year
+          img
+          text
+        }
+        timeline4 {
+          year
+          img
+          text
+        }
+        timeline5 {
+          year
+          img
+          text
+        }
+        numbers1 {
+          value
+          label
+        }
+        numbers2 {
+          value
+          label
+        }
+        numbers3 {
+          value
+          label
+        }
+      }
+      formularios {
+        toggle
+        input1
+        input2
+        input3
+        input4
+        select
+        textarea
+        checkbox1
+        checkbox2
+        button
+      }
+    }
+  }
+`

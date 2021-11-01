@@ -17,6 +17,7 @@ module.exports = {
     'gatsby-plugin-sitemap',
     'gatsby-plugin-breakpoints',
     'gatsby-plugin-htaccess',
+    'gatsby-transformer-json',
     {
       resolve: 'gatsby-plugin-mailchimp',
       options: {
@@ -37,6 +38,13 @@ module.exports = {
       options: {
         name: `posts`,
         path: `${__dirname}/src/posts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/src/content/`,
       },
     },
     {

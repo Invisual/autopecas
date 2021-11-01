@@ -22,7 +22,7 @@ export const IntroSection = ({
       data-sal-duration="600"
       data-sal-delay="100"
     >
-      {text}
+      <h2 dangerouslySetInnerHTML={{ __html: text }} />
       <div className="image-wrapper">
         <img src={image} alt="Autopeças" />
       </div>
@@ -30,16 +30,19 @@ export const IntroSection = ({
   )
 }
 
-const StyledIntro = styled.h2`
+const StyledIntro = styled.div`
   position: relative;
   max-width: 110rem;
-  font-weight: ${({ theme }) => theme.fontRegular};
-  font-size: ${(props) => props.fontSize};
-  line-height: ${(props) => props.lineHeight};
-  letter-spacing: ${(props) => props.letterSpacing};
-  color: ${({ theme }) => theme.introTitle};
-  text-transform: uppercase;
   margin: ${({ theme }) => theme.spacingL} auto 0 auto;
+
+  h2 {
+    font-weight: ${({ theme }) => theme.fontRegular};
+    font-size: ${(props) => props.fontSize};
+    line-height: ${(props) => props.lineHeight};
+    letter-spacing: ${(props) => props.letterSpacing};
+    color: ${({ theme }) => theme.introTitle};
+    text-transform: uppercase;
+  }
 
   span {
     color: ${({ theme }) => theme.lightTitle};

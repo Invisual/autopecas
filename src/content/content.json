@@ -1,0 +1,86 @@
+{
+  "home": {
+    "empresa": {
+      "title": "Empresa",
+      "subTitle": "Agora somos: a AUTOPEÇAS.PT.",
+      "text": " Com 25 anos de experiência no setor, somos uma incubadora de soluções para as empresas do Grupo Trustauto, colocando no mercado ferramentas competitivas e diferenciadoras, proporcionando meios efetivamente úteis às oficinas de reparação.<br /><br /> A nossa missão é evoluir e assegurar um serviço de excelência aos nossos clientes, privilegiando a interação e o uso de recursos e tecnologias inovadoras.",
+      "img": "https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609908/sobre_uy974r.png",
+      "button": "saber mais"
+    },
+    "marcas": {
+      "title": "Marcas Premium"
+    },
+    "blog": {
+      "title": "Blogue",
+      "button": "saber mais"
+    }
+  },
+  "empresa": {
+    "title": "Fundada em <span>1996</span><br /> em <span>Aveiro</span> já<br /> conta com<br /> <span>25 anos</span> de<br />atividade",
+    "img": "https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609908/sobre_uy974r.png",
+    "timeline1": {
+      "year": "2021",
+      "img": "https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609913/timeline1_l7hicl.png",
+      "text": "Rebranding da marca:<br />A APG - Auto Peças Gafanha da Nazaré denomina-se agora de AUTOPEÇAS.PT"
+    },
+    "timeline2": {
+      "year": "2017-2019",
+      "img": "https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609909/timeline2_lchvn1.png",
+      "text": "Autopeças é um dos membros fundadores e acionistas do Grupo TRUSTauto;<br /><br /> Mudança para o novo armazém de 5000 m2."
+    },
+    "timeline3": {
+      "year": "2015",
+      "img": "https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609909/timeline3_owr7vi.png",
+      "text": "Novo Armazém;<br />Associado fundador da AD AfterMarket;<br />Empresa destacada consecutivamente pela Revista 'TOP 100 - Maioresdistribuidores do AfterMarket'."
+    },
+    "timeline4": {
+      "year": "2010",
+      "img": "https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609908/timeline4_wembit.png",
+      "text": "O Estatuto PME Líder é atribuído pelo IAPMEI;<br />Eleita 'Top Associate to AD Portugal' - distingue a empresa mediante o Volume, Finanças e elevados padrões de Negócios AD."
+    },
+    "timeline5": {
+      "year": "2007-2009",
+      "img": "https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609908/timeline5_pyf8wf.png",
+      "text": " Nova loja e armazém;<br />Exportação para África;<br />Exportação para a União Europeia."
+    },
+    "numbers1": {
+      "value": "+500mil",
+      "label": "Unidades vendidas por ano"
+    },
+    "numbers2": {
+      "value": "+30mil",
+      "label": "Referências vendidas por ano"
+    },
+    "numbers3": {
+      "value": "+40",
+      "label": "Marcas Premium"
+    }
+  },
+  "recrutamento": {
+    "title": "Bolsa de Emprego"
+  },
+  "contactos": {
+    "title": "Zona Industrial <span>da Mota</span><br /><span>Rua 6</span> Lote 9-A9<br />3830-572<br /><span>Gafanha da</span><br /><span>Encarnação</span>",
+    "img": "https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635610371/contactos_mywxy6.jpg",
+    "sectionTitle": "Contactos",
+    "email1": "comercial@autopecas.pt",
+    "email2": "geral@autopecas.pt",
+    "phone": "+351 234 397 700",
+    "formTitle": "Precisa de ajuda?"
+  },
+  "formularios": {
+    "toggle": "Podemos Ajudar?",
+    "input1": "Nome",
+    "input2": "Email",
+    "input3": "Telefone",
+    "input4": "Assunto",
+    "select": "Area",
+    "textarea": "Mensagem",
+    "checkbox1": "Li e aceito a Política de Privacidade",
+    "checkbox2": "Aceito partilhar o meu nome, telefone e endereço de email para os fins mencionados",
+    "file": "anexar currículo",
+    "mandatoryFields": "* campos de preenchimento obrigatório",
+    "defaultArea": "Procuramos profissionais excelentes para as seguintes áreas",
+    "button": "Enviar"
+  }
+}

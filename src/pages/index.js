@@ -16,6 +16,7 @@ import axios from 'axios'
 
 const IndexPage = ({
   data: {
+    contentJson: { home: pageContent, formularios: formContent },
     allMarkdownRemark: { edges },
   },
 }) => {
@@ -49,7 +50,7 @@ const IndexPage = ({
         <div className="section-image"></div>
 
         <Styled.About>
-          <Title text="Empresa" />
+          <Title text={pageContent.empresa.title} />
           <div className="about-container">
             <div className="text-wrapper">
               <h3
@@ -57,26 +58,21 @@ const IndexPage = ({
                 data-sal-easing="ease"
                 data-sal-duration="600"
               >
-                Agora somos: a AUTOPEÇAS.PT.
+                {pageContent.empresa.subTitle}
               </h3>
               <Text
                 data-sal="slide-up"
                 data-sal-delay="250"
                 data-sal-duration="700"
                 data-sal-easing="ease"
-              >
-                Com 25 anos de experiência no setor, somos uma incubadora de
-                soluções para as empresas do Grupo Trustauto, colocando no
-                mercado ferramentas competitivas e diferenciadoras,
-                proporcionando meios efetivamente úteis às oficinas de
-                reparação.
-                <br />
-                <br /> A nossa missão é evoluir e assegurar um serviço de
-                excelência aos nossos clientes, privilegiando a interação e o
-                uso de recursos e tecnologias inovadoras.
-              </Text>
+                dangerouslySetInnerHTML={{ __html: pageContent.empresa.text }}
+              />
 
-              <CtaLink text="saber mais" url="/empresa" className="mbl" />
+              <CtaLink
+                text={pageContent.empresa.button}
+                url="/empresa"
+                className="mbl"
+              />
             </div>
             <div
               data-sal="slide-up"
@@ -84,18 +80,19 @@ const IndexPage = ({
               data-sal-easing="ease"
               data-sal-duration="700"
             >
-              <img
-                src="https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609908/sobre_uy974r.png"
-                alt="Autopeças"
+              <img src={pageContent.empresa.img} alt="Autopeças" />
+              <CtaLink
+                text={pageContent.empresa.button}
+                url="/empresa"
+                className="desktop"
               />
-              <CtaLink text="saber mais" url="/empresa" className="desktop" />
             </div>
           </div>
         </Styled.About>
 
         <Styled.Clients>
           <Title
-            text="Marcas Premium"
+            text={pageContent.marcas.title}
             light
             data-sal="fade"
             data-sal-easing="ease"
@@ -109,7 +106,7 @@ const IndexPage = ({
             <Title text="Blogue" />
             <div
               className="wrapper"
-              data-sal="fade"
+              data-sal="slide-up"
               data-sal-easing="ease"
               data-sal-duration="300"
             >
@@ -120,14 +117,18 @@ const IndexPage = ({
                   <h4 className="desktop">{post.title}</h4>
                   <p>{post.description}</p>
                 </div>
-                <CtaLink text="saber mais" url={post.path} className="cta" />
+                <CtaLink
+                  text={pageContent.blog.button}
+                  url={post.path}
+                  className="cta"
+                />
               </div>
             </div>
           </Styled.Blog>
         )}
 
         <Styled.Contact>
-          <ContactForm withToggle />
+          <ContactForm withToggle content={formContent} />
         </Styled.Contact>
       </Styled.Main>
     </Layout>
@@ -155,6 +156,36 @@ export const pageQuery = graphql`
             description
           }
         }
+      }
+    }
+    contentJson {
+      home {
+        empresa {
+          title
+          subTitle
+          text
+          img
+          button
+        }
+        marcas {
+          title
+        }
+        blog {
+          title
+          button
+        }
+      }
+      formularios {
+        toggle
+        input1
+        input2
+        input3
+        input4
+        select
+        textarea
+        checkbox1
+        checkbox2
+        button
       }
     }
   }

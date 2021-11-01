@@ -5,7 +5,7 @@ import ChevronIcon from '../assets/images/chevron.svg'
 import { FormContainer } from '../styles/form.styles'
 import axios from 'axios'
 
-export const ContactForm = ({ withToggle }) => {
+export const ContactForm = ({ withToggle, content }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -85,7 +85,7 @@ export const ContactForm = ({ withToggle }) => {
     >
       {withToggle && (
         <BigButton
-          text="Podemos ajudar?"
+          text={content.toggle}
           onClick={() => setIsOpen(!isOpen)}
           className="toggle"
           isOpen={isOpen}
@@ -105,14 +105,14 @@ export const ContactForm = ({ withToggle }) => {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Nome"
+            placeholder={content.input1}
             required
           />
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
+            placeholder={content.input2}
             required
           />
           <div className="flex">
@@ -120,13 +120,13 @@ export const ContactForm = ({ withToggle }) => {
               type="text"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              placeholder="Telefone"
+              placeholder={content.input3}
             />
             <input
               type="text"
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
-              placeholder="Assunto"
+              placeholder={content.input4}
               required
             />
           </div>
@@ -134,27 +134,24 @@ export const ContactForm = ({ withToggle }) => {
             type="text"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            placeholder="Mensagem"
+            placeholder={content.textarea}
             required
           />
           <div className="flex checkboxes">
             <div>
               <label>
                 <input type="checkbox" required />{' '}
-                <span>Li e aceito a Política de Privacidade</span>
+                <span>{content.checkbox1}</span>
               </label>
               <label>
                 <input type="checkbox" required />{' '}
-                <span>
-                  Aceito partilhar o meu nome, telefone e endereço de email para
-                  os fins mencionados
-                </span>
+                <span>{content.checkbox2}</span>
               </label>
             </div>
 
             <div className="buttons">
               <button>
-                Enviar <ChevronIcon />
+                {content.button} <ChevronIcon />
               </button>
             </div>
           </div>

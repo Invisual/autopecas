@@ -30,6 +30,7 @@
     "gatsby-plugin-styled-components": "^4.8.0",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^4.0.0",
+    "gatsby-transformer-json": "^4.0.0",
     "gatsby-transformer-remark": "^5.0.0",
     "install": "^0.13.0",
     "npm": "^8.1.1",

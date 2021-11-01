@@ -5,22 +5,13 @@ import { IntroSection } from '../components/IntroSection'
 import { ContactForm } from '../components/ContactForm'
 import { Title } from '../components/Title'
 import { Styled } from '../styles/contactos.styles'
+import { graphql } from 'gatsby'
 
-const ContactosPage = () => {
-  const introText = (
-    <>
-      Zona Industrial <span>da Mota</span>
-      <br />
-      <span>Rua 6</span> Lote 9-A9
-      <br />
-      3830-572
-      <br />
-      <span>Gafanha da</span>
-      <br />
-      <span>Encarnação</span>
-    </>
-  )
-
+const ContactosPage = ({
+  data: {
+    contentJson: { contactos: pageContent, formularios: formContent },
+  },
+}) => {
   return (
     <Layout>
       <SEO
@@ -31,8 +22,8 @@ const ContactosPage = () => {
       <Styled.Main>
         <Styled.Intro>
           <IntroSection
-            text={introText}
-            image="https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635610371/contactos_mywxy6.jpg"
+            text={pageContent.title}
+            image={pageContent.img}
             fontSize="5.8rem"
             lineHeight="8rem"
             letterSpacing="0.58rem"
@@ -42,7 +33,7 @@ const ContactosPage = () => {
         </Styled.Intro>
 
         <Styled.Info>
-          <Title text="Contactos" />
+          <Title text={pageContent.sectionTitle} />
           <div
             className="contact-info"
             data-sal="slide-up"
@@ -50,13 +41,15 @@ const ContactosPage = () => {
             data-sal-duration="600"
           >
             <p>
-              <a href="mailto:comercial@autopecas.pt">comercial@autopecas.pt</a>
+              <a href={`mailto:${pageContent.email1}`}>{pageContent.email1}</a>
             </p>
             <p>
-              <a href="tel:+351234397700">+351 234 397 700</a>
+              <a href={`mailto:${pageContent.phone.replace(/\s/g, '')}`}>
+                {pageContent.phone}
+              </a>
             </p>
             <p>
-              <a href="mailto:geral@autopecas.pt">geral@autopecas.pt</a>
+              <a href={`mailto:${pageContent.email2}`}>{pageContent.email2}</a>
             </p>
           </div>
 
@@ -69,8 +62,8 @@ const ContactosPage = () => {
           </div>
 
           <Styled.Contact>
-            <Title text="Precisa de ajuda?" />
-            <ContactForm />
+            <Title text={pageContent.formTitle} />
+            <ContactForm content={formContent} />
           </Styled.Contact>
         </Styled.Info>
       </Styled.Main>
@@ -79,3 +72,34 @@ const ContactosPage = () => {
 }
 
 export default ContactosPage
+
+export const pageQuery = graphql`
+  query {
+    contentJson {
+      contactos {
+        title
+        img
+        sectionTitle
+        email1
+        email2
+        phone
+        formTitle
+      }
+      formularios {
+        toggle
+        input1
+        input2
+        input3
+        input4
+        select
+        textarea
+        checkbox1
+        checkbox2
+        file
+        mandatoryFields
+        defaultArea
+        button
+      }
+    }
+  }
+`
