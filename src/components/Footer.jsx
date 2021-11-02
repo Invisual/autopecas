@@ -95,10 +95,18 @@ export const Footer = () => {
                 >
                   <FacebookIcon />
                 </a>
-                <a href={pageContent.instagramUrl}>
+                <a
+                  href={pageContent.instagramUrl}
+                  target="_blank"
+                  rel="noopener"
+                >
                   <InstagramIcon />
                 </a>
-                <a href={pageContent.linkedinUrl}>
+                <a
+                  href={pageContent.linkedinUrl}
+                  target="_blank"
+                  rel="noopener"
+                >
                   <LinkedinIcon />
                 </a>
               </div>
