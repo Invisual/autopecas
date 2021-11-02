@@ -104,12 +104,7 @@ const IndexPage = ({
         {post && (
           <Styled.Blog>
             <Title text="Blogue" />
-            <div
-              className="wrapper"
-              data-sal="slide-up"
-              data-sal-easing="ease"
-              data-sal-duration="300"
-            >
+            <div className="wrapper">
               <h4 className="mbl">{post.title}</h4>
               <img src={post.img} alt={post.title} />
               <div className="text">
