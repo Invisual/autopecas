@@ -59,7 +59,7 @@ const RecrutamentoPage = ({
     formData.append('file', document.getElementById('file').files[0])
 
     axios
-      .post('https://teste.invisual.pt/recruitment-form.php', formData, {
+      .post('https://autopecas.pt/recruitment-form.php', formData, {
         headers: {
           Accept: 'application/json',
           'Content-Type': 'multipart/form-data; charset=UTF-8',
@@ -100,7 +100,7 @@ const RecrutamentoPage = ({
         description="AUTOPEÇAS.PT - Aceitamos candidaturas para vir trabalhar connosco. Veja as vagas que temos em aberto."
       />
 
-      <Styled.Main>
+      <Styled.Main image={pageContent.img}>
         <Title light text={pageContent.title} />
 
         <FormContainer light className="form-container">
@@ -213,6 +213,7 @@ export const pageQuery = graphql`
     contentJson {
       recrutamento {
         title
+        img
       }
       formularios {
         toggle

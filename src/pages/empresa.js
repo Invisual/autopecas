@@ -20,10 +20,12 @@ const EmpresaPage = ({
       />
 
       <Styled.Main>
-        <Styled.Intro>
+        <Styled.Intro
+          image={pageContent.img}
+          mobileImage={pageContent.imgMobile}
+        >
           <IntroSection
             text={pageContent.title}
-            image={pageContent.img}
             fontSize="7.6rem"
             lineHeight="8.7rem"
             letterSpacing="0.76rem"
@@ -103,10 +105,10 @@ const EmpresaPage = ({
         </Styled.Timeline>
 
         <Styled.Counters
-          data-sal="slide-up"
-          data-sal-easing="ease"
-          data-sal-duration="600"
+          image={pageContent.numbersImg}
+          imageMobile={pageContent.numbersImgMobile}
         >
+          <h2 dangerouslySetInnerHTML={{ __html: pageContent.numbersText }} />
           <div className="counter">
             <h3>{pageContent.numbers1.value}</h3>
             <Text>{pageContent.numbers1.label}</Text>
@@ -139,6 +141,7 @@ export const pageQuery = graphql`
       empresa {
         title
         img
+        imgMobile
         timeline1 {
           year
           img
@@ -164,6 +167,9 @@ export const pageQuery = graphql`
           img
           text
         }
+        numbersImg
+        numbersImgMobile
+        numbersText
         numbers1 {
           value
           label

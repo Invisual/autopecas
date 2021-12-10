@@ -20,15 +20,16 @@ const ContactosPage = ({
       />
 
       <Styled.Main>
-        <Styled.Intro>
+        <Styled.Intro
+          image={pageContent.img}
+          mobileImage={pageContent.imgMobile}
+        >
           <IntroSection
             text={pageContent.title}
             image={pageContent.img}
-            fontSize="5.8rem"
-            lineHeight="8rem"
-            letterSpacing="0.58rem"
-            topLineWidth="20rem"
-            topLineSpacing="-3.5rem"
+            fontSize="7.6rem"
+            lineHeight="8.7rem"
+            letterSpacing="0.76rem"
           />
         </Styled.Intro>
 
@@ -79,6 +80,7 @@ export const pageQuery = graphql`
       contactos {
         title
         img
+        imgMobile
         sectionTitle
         email1
         email2

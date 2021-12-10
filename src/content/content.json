@@ -4,11 +4,13 @@
       "title": "Empresa",
       "subTitle": "Agora somos: a AUTOPEÇAS.PT.",
       "text": " Com 25 anos de experiência no setor, somos uma incubadora de soluções para as empresas do Grupo Trustauto, colocando no mercado ferramentas competitivas e diferenciadoras, proporcionando meios efetivamente úteis às oficinas de reparação.<br /><br /> A nossa missão é evoluir e assegurar um serviço de excelência aos nossos clientes, privilegiando a interação e o uso de recursos e tecnologias inovadoras.",
-      "img": "https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609908/sobre_uy974r.png",
+      "img": "https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609913/timeline1_l7hicl.png",
       "button": "saber mais"
     },
     "marcas": {
-      "title": "Marcas Premium"
+      "title": "Marcas Premium",
+      "text": "'Mantemos de forma constante os olhos postos no futuro'",
+      "img": "https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/f_auto/v1636570687/1_vxus0e.jpg"
     },
     "blog": {
       "title": "Blogue",
@@ -17,11 +19,12 @@
   },
   "empresa": {
     "title": "Fundada em <span>1996</span><br /> em <span>Aveiro</span> já<br /> conta com<br /> <span>25 anos</span> de<br />atividade",
-    "img": "https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609908/sobre_uy974r.png",
+    "img": "https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/v1636570689/2_nuslij.jpg",
+    "imgMobile": "https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/v1636623859/emprsamobile_fr3mrt.jpg",
     "timeline1": {
       "year": "2021",
       "img": "https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609913/timeline1_l7hicl.png",
-      "text": "Rebranding da marca:<br />A APG - Auto Peças Gafanha da Nazaré denomina-se agora de AUTOPEÇAS.PT"
+      "text": "Rebranding da marca:<br />A APG - Auto Peças da Gafanha denomina-se agora de AUTOPEÇAS.PT"
     },
     "timeline2": {
       "year": "2017-2019",
@@ -43,6 +46,9 @@
       "img": "https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635609908/timeline5_pyf8wf.png",
       "text": " Nova loja e armazém;<br />Exportação para África;<br />Exportação para a União Europeia."
     },
+    "numbersImg": "https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/v1637346485/foto_pag_empresa__v01_med7oq.jpg",
+    "numbersImgMobile": "https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/v1637346485/foto_pag_empresa__v01_med7oq.jpg",
+    "numbersText": "A oficina procura,<br/>nós solucionamos",
     "numbers1": {
       "value": "+500mil",
       "label": "Unidades vendidas por ano"
@@ -57,11 +63,13 @@
     }
   },
   "recrutamento": {
-    "title": "Bolsa de Emprego"
+    "title": "Bolsa de Emprego",
+    "img": "https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/v1636570688/4_mk9aa9.jpg"
   },
   "contactos": {
     "title": "Zona Industrial <span>da Mota</span><br /><span>Rua 6</span> Lote 9-A9<br />3830-572<br /><span>Gafanha da</span><br /><span>Encarnação</span>",
-    "img": "https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/f_auto/v1635610371/contactos_mywxy6.jpg",
+    "img": "https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/v1636655365/contactos_g3nblr.jpg",
+    "imgMobile": "https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/v1636654831/contactosmobile_ycuorb.jpg",
     "sectionTitle": "Contactos",
     "email1": "comercial@autopecas.pt",
     "email2": "geral@autopecas.pt",
@@ -85,7 +93,7 @@
   },
   "navbar": {
     "clientArea": "Área Cliente",
-    "clientAreaUrl": "https://autopecas.pt/wp-login.php?redirect_to=https%3A%2F%2Fautopecas.pt%2Farea-de-clientes",
+    "clientAreaUrl": "https://b2b.autopecas.pt",
     "navItem1": "Empresa",
     "navItem1Url": "/empresa",
     "navItem2": "Recrutamento",
@@ -108,6 +116,7 @@
     "facebookUrl": "https://www.facebook.com/AutoPecas.ptt/",
     "instagramUrl": "https://www.instagram.com/autopecas.pt/",
     "linkedinUrl": "https://www.linkedin.com/company/autope%C3%A7as-pt/about/",
+    "youtubeUrl": "https://www.youtube.com/channel/UChK29XDAtOWZ9gMyGhxG4Ag/featured",
     "newsletter": "Subscreva a nossa newsletter",
     "emailInput": "email",
     "createdBy": "Created: Invisual.pt"

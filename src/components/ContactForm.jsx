@@ -40,7 +40,7 @@ export const ContactForm = ({ withToggle, content }) => {
     formData.append('message', message)
 
     axios
-      .post('https://teste.invisual.pt/contact-form.php', formData, {
+      .post('https://autopecas.pt/contact-form.php', formData, {
         headers: {
           Accept: 'application/json',
           'Content-Type': 'multipart/form-data; charset=UTF-8',

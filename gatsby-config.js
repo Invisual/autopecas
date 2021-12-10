@@ -48,6 +48,16 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: {
+        id: 'GTM-WDPPZ6Z',
+        includeInDevelopment: false,
+        defaultDataLayer: {
+          platform: 'gatsby',
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: ['G-XSL8KLSH0M'],

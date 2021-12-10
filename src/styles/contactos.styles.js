@@ -6,7 +6,15 @@ const Main = styled.main`
 `
 
 const Intro = styled.section`
-  background: ${({ theme }) => theme.darkBackground};
+  background-image: url(${(props) => props.image});
+  background-position: 50% ​0;
+  background-size: cover;
+  min-height: 80vh;
+
+  @media screen and (max-width: 1000px) {
+    background-image: url(${(props) => props.mobileImage});
+    background-position: center;
+  }
 `
 
 const Info = styled.section`

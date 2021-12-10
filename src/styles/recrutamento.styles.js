@@ -4,7 +4,9 @@ const Main = styled.main`
   max-width: 100vw;
   min-height: 87vh;
   overflow-x: hidden;
-  background: ${({ theme }) => theme.darkBackground};
+  background-image: url(${(props) => props.image});
+  background-position: center;
+  background-size: cover;
   padding-top: 20rem;
 
   .form-container {

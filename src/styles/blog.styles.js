@@ -10,7 +10,7 @@ const Main = styled.main`
     .image {
       flex-grow: 1;
       background-size: cover;
-      background-position: center;
+      background-position: top center;
       background-repeat: no-repeat;
     }
 
@@ -66,7 +66,7 @@ const Main = styled.main`
         width: 100%;
         height: 80rem;
         background-size: cover;
-        background-position: center;
+        background-position: top left;
         background-repeat: no-repeat;
         margin-top: ${({ theme }) => theme.spacingXXXS};
       }

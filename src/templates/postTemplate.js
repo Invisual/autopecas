@@ -10,13 +10,14 @@ class Template extends Component {
     const { markdownRemark } = this.props.data // data.markdownRemark holds your post data
     const { frontmatter, html } = markdownRemark
 
-    console.log('frontmatter', frontmatter)
-    console.log('markdownRemark', markdownRemark)
-    console.log('html', html)
-
     return (
       <Layout>
-        <SEO title={frontmatter.title} />
+        <SEO
+          title={frontmatter.title}
+          description={frontmatter.description}
+          image={frontmatter.img}
+          pathname={frontmatter.path}
+        />
 
         <Styled.Main>
           <div

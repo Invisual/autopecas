@@ -3,6 +3,7 @@ import Logo from '../assets/images/logo.svg'
 import FacebookIcon from '../assets/images/facebook.svg'
 import InstagramIcon from '../assets/images/instagram.svg'
 import LinkedinIcon from '../assets/images/linkedin.svg'
+import YoutubeIcon from '../assets/images/youtube.svg'
 import ChevronIcon from '../assets/images/chevron.svg'
 import styled from 'styled-components'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
@@ -43,6 +44,7 @@ export const Footer = () => {
               facebookUrl
               instagramUrl
               linkedinUrl
+              youtubeUrl
               newsletter
               emailInput
               createdBy
@@ -109,6 +111,9 @@ export const Footer = () => {
                 >
                   <LinkedinIcon />
                 </a>
+                <a href={pageContent.youtubeUrl} target="_blank" rel="noopener">
+                  <YoutubeIcon className="youtube" />
+                </a>
               </div>
 
               <div className="newsletter">
@@ -171,6 +176,10 @@ const StyledFooter = styled.footer`
     svg {
       width: 1.2rem;
       margin-right: ${({ theme }) => theme.spacingXS};
+
+      &.youtube {
+        width: 1.5rem;
+      }
 
       path {
         fill: ${({ theme }) => theme.lightText} !important;

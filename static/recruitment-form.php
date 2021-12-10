@@ -33,8 +33,7 @@ if (isset($_POST)) {
 
     // Recipients
     $mail->setFrom('autopecas@invisual.pt', 'Autopeças');
-    $mail->addAddress('eduardo.araujo@invisual.pt', 'Eduardo');
-    //$mail->addReplyTo($email, $name);
+    $mail->addAddress('geral@autopecas.pt', 'Autopeças');
 
     // Content
     $mail->CharSet = 'UTF-8';

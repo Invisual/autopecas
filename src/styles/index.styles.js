@@ -66,9 +66,47 @@ const About = styled.section`
 
 const Clients = styled.section`
   background: ${({ theme }) => theme.darkBackground};
+  padding: 0 0 ${({ theme }) => theme.spacingXL};
+
+  .banner {
+    width: 100%;
+    min-height: 65rem;
+    background-position: 50% 25%;
+    background-size: cover;
+    padding: ${({ theme }) =>
+      `${theme.spacingL} ${theme.spacingM} ${theme.spacingM}`};
+    text-align: center;
+
+    h2 {
+      font-size: 4.5rem;
+      line-height: 5.9rem;
+      letter-spacing: 1rem;
+      font-weight: ${({ theme }) => theme.fontRegular};
+      color: ${({ theme }) => theme.introTitle};
+      text-transform: uppercase;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+  }
 
   .carousel {
     margin-top: ${({ theme }) => theme.spacingL};
+  }
+
+  @media screen and (max-width: 1000px) {
+    .banner h2 {
+      font-size: 2.5rem;
+      line-height: 3.8rem;
+      letter-spacing: 0.5rem;
+      max-width: unset;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .banner {
+      padding: ${({ theme }) =>
+        `${theme.spacingL} ${theme.spacingS} ${theme.spacingS}`};
+    }
   }
 `
 
@@ -79,6 +117,7 @@ const Blog = styled.section`
 
   img  {
     max-width: 100%;
+    width: 100%;
   }
 
   .text {

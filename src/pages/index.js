@@ -42,12 +42,12 @@ const IndexPage = ({
       <SEO title="Home" />
 
       <Styled.Main>
-        {/* <VideoSection
+        <VideoSection
           fullVideo={MainVideo}
           previewVideo={MainVideoPreview}
           mobileImg={'./images/sobre.png'}
-        /> */}
-        <div className="section-image"></div>
+        />
+        {/* <div className="section-image"></div> */}
 
         <Styled.About>
           <Title text={pageContent.empresa.title} />
@@ -91,6 +91,15 @@ const IndexPage = ({
         </Styled.About>
 
         <Styled.Clients>
+          <div
+            className="banner"
+            style={{ backgroundImage: `url(${pageContent.marcas.img})` }}
+            data-sal="fade"
+            data-sal-easing="ease"
+            data-sal-duration="600"
+          >
+            <h2>{pageContent.marcas.text}</h2>
+          </div>
           <Title
             text={pageContent.marcas.title}
             light
@@ -164,6 +173,8 @@ export const pageQuery = graphql`
         }
         marcas {
           title
+          text
+          img
         }
         blog {
           title

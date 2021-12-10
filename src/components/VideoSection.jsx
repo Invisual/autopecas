@@ -243,7 +243,7 @@ export const VideoSection = ({ previewVideo, fullVideo, mobileImg }) => {
 const StyledVideoSection = styled.div`
   position: relative;
   max-height: 100vh;
-  max-width: 177.78vh;
+  max-width: 100vw;
   background-color: #000000;
   height: 100vh;
   width: 100vw;
