@@ -18,6 +18,13 @@ export const Footer = () => {
     addToMailchimp(email).then(({ result }) => {
       setSuccess(result === 'success')
       setEmail('')
+      if (result === 'success') {
+        typeof window !== 'undefined' &&
+          window.gtag('event', 'Submit', {
+            event_category: 'Formulário Newsletter',
+            event_label: 'Newsletter',
+          })
+      }
     })
   }
 
@@ -68,7 +75,7 @@ export const Footer = () => {
                 <a href={`mailto:${pageContent.email1}`}>
                   {pageContent.email1}
                 </a>{' '}
-                |
+                |{' '}
                 <a href={`mailto:${pageContent.email2}`}>
                   {pageContent.email2}
                 </a>
@@ -119,9 +126,13 @@ export const Footer = () => {
               <div className="newsletter">
                 <p>{pageContent.newsletter}</p>
                 {success === true ? (
-                  <p>Obrigado por subscrever!</p>
+                  <p className="newsletter-form-success">
+                    Obrigado por subscrever!
+                  </p>
                 ) : success === false ? (
-                  <p>Ocorreu um erro, tente de novo.</p>
+                  <p className="newsletter-form-error">
+                    Ocorreu um erro, tente de novo.
+                  </p>
                 ) : (
                   <form onSubmit={handleSubmit}>
                     <input

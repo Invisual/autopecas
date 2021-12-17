@@ -15,12 +15,14 @@ export const ContactForm = ({ withToggle, content }) => {
   const [isLoading, setIsLoading] = useState(false)
   const [isSent, setIsSent] = useState(false)
   const [feedbackMessage, setFeedbackMessage] = useState('')
+  const [messageClass, setMessageClass] = useState('')
 
   const showForm = withToggle ? isOpen : true
 
   const clearAll = () => {
     setIsSent(false)
     setFeedbackMessage('')
+    setMessageClass('')
     setName('')
     setEmail('')
     setPhone('')
@@ -48,20 +50,29 @@ export const ContactForm = ({ withToggle, content }) => {
       })
       .then((res) => {
         if (res.data === 'success') {
+          typeof window !== 'undefined' &&
+            window.gtag('event', 'Submit', {
+              event_category: 'Formulário Contacto',
+              event_label: 'Contacto',
+            })
           setFeedbackMessage(
             'A sua mensagem foi enviada com sucesso! Vamos tentar responder o mais brevemente possível.'
           )
+          setMessageClass('contact-form-success')
         } else {
           setFeedbackMessage(
             'Houve um erro ao enviar esta mensagem, por favor tente mais tarde.'
           )
+          setMessageClass('contact-form-error')
         }
       })
-      .catch((err) =>
+      .catch((err) => {
+        console.log('err', err)
         setFeedbackMessage(
-          'Houve um erro ao enviar esta candidatura, por favor tente mais tarde.'
+          'Houve um erro ao enviar esta mensagem, por favor tente mais tarde.'
         )
-      )
+        setMessageClass('contact-form-error')
+      })
       .finally(() => {
         setIsLoading(false)
         setIsSent(true)
@@ -95,7 +106,7 @@ export const ContactForm = ({ withToggle, content }) => {
       {isLoading ? (
         <LoadingSpinner />
       ) : isSent && feedbackMessage ? (
-        <p className="feedback-message">{feedbackMessage}</p>
+        <p className={`feedback-message ${messageClass}`}>{feedbackMessage}</p>
       ) : (
         <form
           onSubmit={handleSubmit}

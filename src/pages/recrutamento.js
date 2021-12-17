@@ -33,10 +33,12 @@ const RecrutamentoPage = ({
   const [isLoading, setIsLoading] = useState(false)
   const [isSent, setIsSent] = useState(false)
   const [feedbackMessage, setFeedbackMessage] = useState('')
+  const [messageClass, setMessageClass] = useState('')
 
   const clearAll = () => {
     setIsSent(false)
     setFeedbackMessage('')
+    setMessageClass('')
     setArea('')
     setName('')
     setEmail('')
@@ -67,20 +69,28 @@ const RecrutamentoPage = ({
       })
       .then((res) => {
         if (res.data === 'success') {
+          typeof window !== 'undefined' &&
+            window.gtag('event', 'Submit', {
+              event_category: 'Formulário Recrutamento',
+              event_label: 'Recrutamento',
+            })
           setFeedbackMessage(
             'A sua candidatura foi enviada com sucesso! Vamos tentar responder o mais brevemente possível.'
           )
+          setMessageClass('recruitment-form-success')
         } else {
           setFeedbackMessage(
             'Houve um erro ao enviar esta candidatura, por favor tente mais tarde.'
           )
+          setMessageClass('recruitment-form-error')
         }
       })
-      .catch((err) =>
+      .catch((err) => {
         setFeedbackMessage(
           'Houve um erro ao enviar esta candidatura, por favor tente mais tarde.'
         )
-      )
+        setMessageClass('recruitment-form-error')
+      })
       .finally(() => {
         setIsLoading(false)
         setIsSent(true)
@@ -107,7 +117,9 @@ const RecrutamentoPage = ({
           {isLoading ? (
             <LoadingSpinner light />
           ) : isSent && feedbackMessage ? (
-            <p className="feedback-message">{feedbackMessage}</p>
+            <p className={`feedback-message ${messageClass}`}>
+              {feedbackMessage}
+            </p>
           ) : (
             <form
               onSubmit={handleSubmit}

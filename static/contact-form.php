@@ -28,7 +28,7 @@ if (isset($_POST)) {
     $mail->SMTPSecure = "ssl";
     $mail->Port = 465;
     $mail->Username = "autopecas@invisual.pt";
-    $mail->Password = "auto#lausivni";
+    $mail->Password = "lausivniauto";
 
     // Recipients
     $mail->setFrom('autopecas@invisual.pt', 'Autopeças');

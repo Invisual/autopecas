@@ -25,7 +25,7 @@ const SEO = ({ title, description, image, pathname, article, lang }) => {
           image: article ? image : `${image || defaultImage}`,
           url: `${siteUrl}${pathname || '/'}`,
         }
-        console.log('seo', seo)
+
         return (
           <>
             <Helmet
