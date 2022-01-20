@@ -14,9 +14,10 @@ const BlogPage = ({
     allMarkdownRemark: { edges },
   },
 }) => {
-  const [postsNumber, setPostsNumber] = useState(3)
+  const [postsNumber, setPostsNumber] = useState(4)
 
   const posts = parseBlogPosts(edges)
+
   if (!posts || !Boolean(posts.length)) {
     return (
       <Layout>
@@ -28,7 +29,7 @@ const BlogPage = ({
     )
   }
 
-  const seeMorePosts = () => setPostsNumber(postsNumber + 3)
+  const seeMorePosts = () => setPostsNumber(postsNumber + 4)
 
   const visiblePosts = posts.slice(0, postsNumber)
 

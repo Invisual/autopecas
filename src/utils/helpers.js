@@ -37,5 +37,4 @@ export const parseBlogPosts = (edges) =>
       title: node.frontmatter.title,
       img: node.frontmatter.img,
       description: node.frontmatter.description,
-      path: node.frontmatter.path,
     }))
