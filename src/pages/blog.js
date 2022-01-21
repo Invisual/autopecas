@@ -42,7 +42,7 @@ const BlogPage = ({
       <Styled.Main>
         <section className="highlighted-post">
           <div
-            className="image"
+            className="image highlight-new-image"
             style={{ backgroundImage: `url(${posts[0].img})` }}
           ></div>
           <div className="content">

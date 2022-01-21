@@ -7,6 +7,9 @@ const Main = styled.main`
     min-height: 100vh;
     padding: ${({ theme }) => theme.spacingM} 0 0 0;
 
+    .highlight-new-image{
+      min-height: 35vh;
+    }
     .image {
       flex-grow: 1;
       background-size: cover;

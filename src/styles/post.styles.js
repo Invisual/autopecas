@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
 const Main = styled.main`
+
+.mt-5{
+  margin-top: 5%
+}
   .post-image {
     width: 100%;
     min-height: 60vh;
@@ -11,7 +15,7 @@ const Main = styled.main`
 
   .container {
     padding: ${({ theme }) =>
-      `${theme.spacingL} ${theme.spacingM} ${theme.spacingXL} ${theme.spacingM}`};
+    `${theme.spacingL} ${theme.spacingM} ${theme.spacingXL} ${theme.spacingM}`};
   }
 
   .post-title {
@@ -66,7 +70,7 @@ const Main = styled.main`
 
     .container {
       padding: ${({ theme }) =>
-        `${theme.spacingM} ${theme.spacingS} ${theme.spacingL} ${theme.spacingS}`};
+    `${theme.spacingM} ${theme.spacingS} ${theme.spacingL} ${theme.spacingS}`};
     }
 
     .split {

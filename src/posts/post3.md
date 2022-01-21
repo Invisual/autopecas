@@ -2,7 +2,7 @@
 path: '/blog/autopecas-trustauto'
 date: '2022-01-20'
 title: 'Autopeças.PT e Trustauto, uma dupla de sucesso!'
-img: '../images/blog/post3.png'
+img: 'https://res.cloudinary.com/ddbuiilei/image/upload/v1642679466/posts/post3_nwcvh5.png'
 description: 'A relação da AutoPeças.PT e do Grupo Trustauto tem por base a confiança e o rigor, promovendo o uso de produtos de excelência e de qualidade, de forma a garantirem o melhor valor acrescentado para os seus cliente e oficinas, com quem desenvolvem relações de longo prazo.'
 status: true
 ---
@@ -42,4 +42,3 @@ status: true
 
 
 </div>
-

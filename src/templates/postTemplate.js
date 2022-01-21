@@ -21,7 +21,7 @@ class Template extends Component {
 
         <Styled.Main>
           <div
-            className="post-image"
+            className="post-image mt-5"
             style={{ backgroundImage: `url(${frontmatter.img})` }}
           ></div>
 
