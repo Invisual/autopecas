@@ -15,14 +15,14 @@ class Template extends Component {
         <SEO
           title={frontmatter.title}
           description={frontmatter.description}
-          image={frontmatter.img}
+          image={frontmatter.imgBanner}
           pathname={frontmatter.path}
         />
 
         <Styled.Main>
           <div
-            className="post-image mt-5"
-            style={{ backgroundImage: `url(${frontmatter.img})` }}
+            className="post-image mt-4"
+            style={{ backgroundImage: `url(${frontmatter.imgBanner})` }}
           ></div>
 
           <div className="container">
@@ -59,7 +59,9 @@ export const pageQuery = graphql`
         path
         title
         description
-        img
+        imgHighNew
+        imgCard
+        imgBanner
       }
     }
   }

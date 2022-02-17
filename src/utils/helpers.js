@@ -35,6 +35,8 @@ export const parseBlogPosts = (edges) =>
       path: node.frontmatter.path,
       date: node.frontmatter.date,
       title: node.frontmatter.title,
-      img: node.frontmatter.img,
+      imgHighNew: node.frontmatter.imgHighNew,
+      imgCard: node.frontmatter.imgCard,
+      imgBanner: node.frontmatter.imgBanner,
       description: node.frontmatter.description,
     }))

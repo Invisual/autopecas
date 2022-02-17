@@ -13,7 +13,7 @@ const Main = styled.main`
     .image {
       flex-grow: 1;
       background-size: cover;
-      background-position: top center;
+      background-position:  center;
       background-repeat: no-repeat;
     }
 

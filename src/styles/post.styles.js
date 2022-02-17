@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 const Main = styled.main`
 
-.mt-5{
-  margin-top: 5%
+.mt-4{
+  margin-top: 4%
 }
   .post-image {
     width: 100%;

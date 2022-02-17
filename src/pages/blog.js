@@ -41,9 +41,10 @@ const BlogPage = ({
       />
       <Styled.Main>
         <section className="highlighted-post">
+          {console.log(posts)}
           <div
             className="image highlight-new-image"
-            style={{ backgroundImage: `url(${posts[0].img})` }}
+            style={{ backgroundImage: `url(${posts[0].imgHighNew})` }}
           ></div>
           <div className="content">
             <h1
@@ -73,7 +74,7 @@ const BlogPage = ({
                   <span className="date">{p.date}</span>
                   <div
                     className="image"
-                    style={{ backgroundImage: `url(${p.img})` }}
+                    style={{ backgroundImage: `url(${p.imgCard})` }}
                   ></div>
                   <h2>{p.title}</h2>
                   <Text>{p.description}</Text>
@@ -108,7 +109,9 @@ export const pageQuery = graphql`
             date(formatString: "DD MMMM, YYYY")
             path
             title
-            img
+            imgHighNew
+            imgCard
+            imgBanner
             status
             description
           }

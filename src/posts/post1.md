@@ -2,7 +2,9 @@
 path: '/blog/nova-identidade'
 date: '2021-11-18'
 title: 'A APG – Auto Peças da Gafanha denomina-se agora de AutoPeças.PT'
-img: 'https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/v1637236503/posts/post1-2_z5pksb.png'
+imgHighNew: 'https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/v1637236503/posts/post1-2_z5pksb.png'
+imgCard: 'https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/v1637236503/posts/post1-2_z5pksb.png'
+imgBanner: 'https://res.cloudinary.com/ddbuiilei/image/upload/q_auto/w_auto/v1637236503/posts/post1-2_z5pksb.png'
 description: 'Para marcar o vigésimo quinto aniversário, a APG – Auto Peças da Gafanha, negócio ligado ao comércio de peças automóvel, denomina-se agora de AutoPeças.PT!'
 status: true
 ---

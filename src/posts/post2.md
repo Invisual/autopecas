@@ -2,7 +2,9 @@
 path: '/blog/nova-identidade'
 date: '2021-10-26'
 title: 'AUTOPEÇAS.PT Uma Nova Identidade'
-img: '../images/blog/post1.png'
+imgHighNew: '../images/blog/post1.png'
+imgCard: '../images/blog/post1.png'
+imgBanner: '../images/blog/post1.png'
 description: 'Celebrando este ano o seu vigésimo quinto aniversário, a APG – Auto Peças Gafanha da Nazaré, negócio ligado ao comércio de peças automóvel, denomina-se de AUTOPEÇAS.PT'
 status: false
 ---
