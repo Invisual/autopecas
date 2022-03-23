@@ -35,6 +35,7 @@ const SEO = ({ title, description, image, pathname, article, lang }) => {
             >
               <meta name="description" content={seo.description} />
               <meta name="image" content={seo.image} />
+              <meta name="facebook-domain-verification" content="hba5yx8anq7k7s4ija8f7vralusvoa" />
               {seo.url && <meta property="og:url" content={seo.url} />}
               {(article ? true : null) && (
                 <meta property="og:type" content="article" />
