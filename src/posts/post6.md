@@ -32,15 +32,15 @@ produtos que abrange todas as potenciais necessidades dos nossos clientes.
 <br />
 <p>
 Com um serviço focado na satisfação do cliente, dispomos de uma equipa dinâmica e em constante 
-comunicação para garantir uma resposta rápida e eficaz.
+comunicação para garantir uma resposta rápida e eficaz. 
 </p>
 
 <br />
 <p>
 Os serviços que dispomos fazem com que os nossos clientes vejam na AutoPeças.PT um parceiro para o 
-bom funcionamento da sua empresa. <br/>
+bom funcionamento da sua empresa.  <br/>
 Assim sendo, contamos com um serviço integrado, ao longo de todo o processo de venda, facilitando a 
-procura e entrega dos produtos solicitados pelos clientes.
+procura e entrega dos produtos solicitados pelos clientes. 
 </p>
 
 <br />
@@ -49,9 +49,9 @@ procura e entrega dos produtos solicitados pelos clientes.
    <p>
 O atendimento AutoPeças.PT é personalizado e orientado consoante as necessidades do cliente. Estamos 
 disponíveis para o receber presencialmente nas nossas instalações, onde será recebido pelos nossos 
-colaboradores que garantem o melhor aconselhamento face à necessidade existente. <br />
+colaboradores que garantem o melhor aconselhamento face à necessidade existente.  <br />
 A qualificação e formação é uma garantia AutoPeças.PT, de forma a que os nossos funcionários 
-disponham de todas as ferramentas para o aconselhar e estarem aptos na resolução de problemas.
+disponham de todas as ferramentas para o aconselhar e estarem aptos na resolução de problemas. 
 
 </p>
 <br />
@@ -59,9 +59,9 @@ disponham de todas as ferramentas para o aconselhar e estarem aptos na resoluç�
  ●	 Call Center :</p>
    <p>
 Estamos disponíveis para o acompanhar e guiar a qualquer momento e fase do processo. Na Autopeças 
-dispomos de um Call Center dedicado a ouvi-lo e receber os seus pedidos. <br />
+dispomos de um Call Center dedicado a ouvi-lo e receber os seus pedidos.  <br />
 Posteriormente, a nossa equipa irá registar a sua encomenda, que de seguida será acondicionada na área 
-de distribuição e expedição. 
+de distribuição e expedição.
 </p>
 <br />
 <p>
@@ -70,16 +70,16 @@ de distribuição e expedição.
 Com o nosso serviço de entregas, a peça que precisa estará na sua oficina o mais rápido possível. Através 
 da nossa frota, todas as peças são entregues com o máximo cuidado e urgência, fazendo com que os 
 nossos clientes tenham nas suas instalações o produto solicitado, de forma a poderem continuar com o 
-seu trabalho.
+seu trabalho. 
 </p>
 <br />
 <p>
  ●	 Serviço pós-venda :</p>
    <p>
 Para garantir a satisfação dos nossos clientes, na AutoPeças.PT temos um serviço de apoio ao cliente de 
-excelência, contando também com acordos com fornecedores, facilitando assim o processo de compra. 
-Asseguramos que os nossos clientes têm a melhor experiência dentro do serviço por nós prestado, 
-estando disponíveis em qualquer momento.
+excelência, contando com acordos com os fornecedores, facilitando assim o processo de devolução, 
+garantia e reclamação. Asseguramos que os nossos clientes têm a melhor experiência dentro do serviço 
+por nós prestado, estando disponíveis em qualquer momento.
 </p>
 <br />
 
