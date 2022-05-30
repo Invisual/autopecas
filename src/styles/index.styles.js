@@ -120,6 +120,12 @@ const Blog = styled.section`
     width: 100%;
   }
 
+  .banner-homepage{
+    max-width: 100%;
+    width: 100%;
+    max-height: 45vh;
+    object-fit: cover;
+  }
   .text {
     display: flex;
     align-items: center;

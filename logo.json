@@ -1,0 +1,122 @@
+{
+    "resources": [
+        {
+            "public_id": "logos/13_q9ndps",
+            "version": 1635609915,
+            "format": "svg",
+            "width": 42,
+            "height": 20,
+            "type": "upload",
+            "created_at": "2021-10-30T16:05:15Z"
+        },
+        {
+            "public_id": "logos/7_grnxo2",
+            "version": 1635609919,
+            "format": "svg",
+            "width": 59,
+            "height": 23,
+            "type": "upload",
+            "created_at": "2021-10-30T16:05:19Z"
+        },
+        {
+            "public_id": "logos/1_g5pw7o",
+            "version": 1635609917,
+            "format": "svg",
+            "width": 62,
+            "height": 13,
+            "type": "upload",
+            "created_at": "2021-10-30T16:05:17Z"
+        },
+        {
+            "public_id": "logos/14_j6miby",
+            "version": 1635609917,
+            "format": "svg",
+            "width": 54,
+            "height": 23,
+            "type": "upload",
+            "created_at": "2021-10-30T16:05:17Z"
+        },
+        {
+            "public_id": "logos/6_ancrda",
+            "version": 1635609919,
+            "format": "svg",
+            "width": 59,
+            "height": 13,
+            "type": "upload",
+            "created_at": "2021-10-30T16:05:19Z"
+        },
+        {
+            "public_id": "logos/9_zfbvd5",
+            "version": 1635609917,
+            "format": "svg",
+            "width": 58,
+            "height": 16,
+            "type": "upload",
+            "created_at": "2021-10-30T16:05:17Z"
+        },
+        {
+           "public_id": "logos/16_mfrcfh",
+           "version": 1635609915,
+           "format": "svg",
+           "width": 46,
+           "height": 30,
+           "type": "upload",
+           "created_at": "2021-10-30T16:05:15Z"
+       },
+        {
+            "public_id": "logos/5_u9hyax",
+            "version": 1635609919,
+            "format": "svg",
+            "width": 59,
+            "height": 13,
+            "type": "upload",
+            "created_at": "2021-10-30T16:05:19Z"
+        },
+        {
+            "public_id": "logos/4_mzj5l8",
+            "version": 1635609919,
+            "format": "svg",
+            "width": 62,
+            "height": 16,
+            "type": "upload",
+            "created_at": "2021-10-30T16:05:19Z"
+        },
+        {
+            "public_id": "logos/8_wjivuz",
+            "version": 1635609917,
+            "format": "svg",
+            "width": 59,
+            "height": 9,
+            "type": "upload",
+            "created_at": "2021-10-30T16:05:17Z"
+        },
+        {
+            "public_id": "logos/15_qozg6d",
+            "version": 1635609917,
+            "format": "svg",
+            "width": 43,
+            "height": 39,
+            "type": "upload",
+            "created_at": "2021-10-30T16:05:17Z"
+        },
+        {
+            "public_id": "logos/12_xeyl2t",
+            "version": 1635609915,
+            "format": "svg",
+            "width": 55,
+            "height": 15,
+            "type": "upload",
+            "created_at": "2021-10-30T16:05:15Z"
+        },
+        {
+            "public_id": "logos/11_xwwiiv",
+            "version": 1635609915,
+            "format": "svg",
+            "width": 56,
+            "height": 16,
+            "type": "upload",
+            "created_at": "2021-10-30T16:05:15Z"
+        }
+    ],
+    "updated_at": "2021-10-30T16:25:38Z"
+}

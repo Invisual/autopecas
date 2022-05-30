@@ -26,7 +26,7 @@ const IndexPage = ({
 
   useEffect(() => {
     axios
-      .get('https://res.cloudinary.com/ddbuiilei/image/list/logo.json')
+      .get('https://res.cloudinary.com/ddbuiilei/raw/upload/v1653901784/logo.json')
       .then((res) => {
         const logos = res.data.resources.map(
           (img) =>
@@ -115,7 +115,7 @@ const IndexPage = ({
             <Title text="Blogue" />
             <div className="wrapper">
               <h4 className="mbl">{post.title}</h4>
-              <img src={post.img} alt={post.title} />
+              <img src={post.imgBanner} alt={post.title} className="banner-homepage"/>
               <div className="text">
                 <div>
                   <h4 className="desktop">{post.title}</h4>
