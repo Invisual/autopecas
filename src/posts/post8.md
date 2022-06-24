@@ -2,9 +2,9 @@
 path: '/blog/formacoes-autopecas'
 date: '2022-06-23'
 title: 'Formações AutoPeças'
-imgHighNew: 'https://res.cloudinary.com/ddbuiilei/image/upload/v1655978895/posts/post8/Noti%CC%81cia-15_z5lkf2.jpg'
-imgCard: 'https://res.cloudinary.com/ddbuiilei/image/upload/v1655978897/posts/post8/Noti%CC%81cia-16_aeu4z4.jpg'
-imgBanner: 'https://res.cloudinary.com/ddbuiilei/image/upload/v1655978895/posts/post8/Noti%CC%81cia-15_z5lkf2.jpg'
+imgHighNew: 'https://res.cloudinary.com/ddbuiilei/image/upload/v1656079369/posts/post8/Noti%CC%81cia-15_a1n2uq.jpg'
+imgCard: 'https://res.cloudinary.com/ddbuiilei/image/upload/v1656079365/posts/post8/Noti%CC%81cia-16_yasvlr.jpg'
+imgBanner: 'https://res.cloudinary.com/ddbuiilei/image/upload/v1656079369/posts/post8/Noti%CC%81cia-15_a1n2uq.jpg'
 description: 'Nos dias de hoje, é imprescindível que os profissionais especializados em oficina automóvel realizem 
 formações periódicas de modo a estarem melhor preparados para os diferentes tipos de mecânica com os 
 quais têm de lidar no quotidiano.'
